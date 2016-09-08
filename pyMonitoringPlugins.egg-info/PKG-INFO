@@ -1,14 +1,14 @@
 Metadata-Version: 1.1
 Name: pyMonitoringPlugins
-Version: 1.0.1.0
+Version: 1.0.2.0
 Summary: Common interface of tons protocals, used for monitoring tools, like nagios/icinga...
 Home-page: https://github.com/crazy-canux/pyMonitoringPlugins
 Author: Canux CHENG
 Author-email: canuxcheng@gmail.com
 License: GPL
-Description: =============================
-        pyMonitoringPluginsingPlugins
-        =============================
+Description: ===================
+        pyMonitoringPlugins
+        ===================
         
         pyMonitoringPluginsingPlugins is pure python code.
         

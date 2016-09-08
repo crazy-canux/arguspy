@@ -1,6 +1,6 @@
-=============================
-pyMonitoringPluginsingPlugins
-=============================
+===================
+pyMonitoringPlugins
+===================
 
 pyMonitoringPluginsingPlugins is pure python code.
 
