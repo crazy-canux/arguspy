@@ -1,0 +1,9 @@
+pymysql
+pymssql
+paramiko
+pywinrm
+pysnmp
+pyvmomi
+sh
+requests
+bs4
