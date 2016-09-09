@@ -92,7 +92,7 @@ class Ssh(Monitor):
         self.subparsers = self.parser.add_subparsers(title="SSH Actions",
                                                      description="Action mode for SSH.",
                                                      help="Specify your action for SSH.")
-        self.ssh_parser.add_argument('-p', '--port',
+        self.ssh_parser.add_argument('-P', '--port',
                                      default='22',
                                      type=int,
                                      required=False,

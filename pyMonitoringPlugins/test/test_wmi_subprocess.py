@@ -1,15 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+r"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
 
 All rights reserved.
-Name: test_wmi.py
+Name: test_wmi_subprocess.py
 Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
 Time: Mon 08 Aug 2016 04:43:40 PM CST
 
 Description:
     [1.0.0.0] 20160728 init for basic function.
+Example:
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\' -f '%%' -e '%%' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
+Example:
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\' -f '%%' -e '%%' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
+Example:
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockTimeoutsPersec -w 0 -c 0
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockWaitsPersec -w 0 -c 0
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m NumberofDeadlocksPersec -w 0 -c 0
 """
 import sys
 import datetime
@@ -20,13 +32,7 @@ from wmi_subprocess import Wmi
 
 class FileNumber(Wmi):
 
-    r"""Count the number of file in the folder.
-
-    Example:
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\' -f '%%' -e '%%' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
-    """
+    r"""Count the number of file in the folder."""
 
     def __init__(self, *args, **kwargs):
         super(FileNumber, self).__init__(*args, **kwargs)
@@ -139,13 +145,7 @@ class FileNumber(Wmi):
 
 class FileAge(Wmi):
 
-    r"""Get the file age, compare with the current date and time.
-
-    Example:
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\' -f '%%' -e '%%' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
-    """
+    """Get the file age, compare with the current date and time."""
 
     def __init__(self, *args, **kwargs):
         super(FileAge, self).__init__(*args, **kwargs)
@@ -302,13 +302,7 @@ class FileAge(Wmi):
 
 class SqlserverLocks(Wmi):
 
-    """Check the attribute related to MSSQLSERVER_SQLServerLocks wmi class.
-
-    Example:
-        check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockTimeoutsPersec -w 0 -c 0
-        check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockWaitsPersec -w 0 -c 0
-        check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m NumberofDeadlocksPersec -w 0 -c 0
-    """
+    """Check the attribute related to MSSQLSERVER_SQLServerLocks wmi class."""
 
     def __init__(self, *args, **kwargs):
         super(SqlserverLocks, self).__init__(*args, **kwargs)

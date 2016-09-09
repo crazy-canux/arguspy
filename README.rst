@@ -2,7 +2,7 @@
 pyMonitoringPlugins
 ===================
 
-pyMonitoringPluginsingPlugins is pure python code.
+pyMonitoringPlugins is pure python code.
 
 It's a API packge for monitoring plugins, like nagios or icinga.
 
@@ -14,13 +14,29 @@ How to install
 
 Use pip to install:
 
-    pip install pyMonitoringPluginsingPlugins
+    pip install pyMonitoringPlugins
 
 ----------
 How to use
 ----------
 
-    import pyMonitoringPluginsingPlugins
+Just import what protocol you need:
+
+    from pyMonitoringPlugins.<protocol_package> import <Class>
+
+    from pyMonitoringPlugins.ftp_ftplib import Ftp
+
+    from pyMonitoringPlugins.mssql_pymssql import Mssql
+
+    from pyMonitoringPlugins.mysql_pymysql import Mysql
+
+    from pyMonitoringPlugins.ssh_paramiko import Ssh
+
+    from pyMonitoringPlugins.winrm_pywinrm import WinRM
+
+    from pyMonitoringPlugins.wmi_sh import Wmi
+
+    from pyMonitoringPlugins.wmi_subprocess import Wmi
 
 --------------
 How to extends
@@ -37,7 +53,6 @@ TODO
 1. snmp
 2. http
 3. pyMonitoringPlugins/docs build with sphinx
-4. wmi_sh.py
 
 ============
 Contribution

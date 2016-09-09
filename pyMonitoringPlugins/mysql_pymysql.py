@@ -75,9 +75,9 @@ class Mysql(Monitor):
                                                      description="Action mode for mysql.",
                                                      help="Speficy you action for mysql.")
         self.mysql_parser.add_argument('-d', '--database',
-                                       default='master',
+                                       default='mysql',
                                        required=False,
-                                       help='database name, default is %(default)s',
+                                       help='database name. Default is %(default)s',
                                        dest='database')
         self.mysql_parser.add_argument('-l', '--login_timeout',
                                        default=60,

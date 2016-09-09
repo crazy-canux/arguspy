@@ -77,7 +77,7 @@ class Monitor(object):
                                         required=False,
                                         help="User name",
                                         dest="user")
-        self.plugin_parser.add_argument("-P", "--password",
+        self.plugin_parser.add_argument("-p", "--password",
                                         required=False,
                                         help="User password",
                                         dest="password")

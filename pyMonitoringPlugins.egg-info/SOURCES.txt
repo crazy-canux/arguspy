@@ -7,6 +7,7 @@ pyMonitoringPlugins/mssql_pymssql.py
 pyMonitoringPlugins/mysql_pymysql.py
 pyMonitoringPlugins/ssh_paramiko.py
 pyMonitoringPlugins/winrm_pywinrm.py
+pyMonitoringPlugins/wmi_sh.py
 pyMonitoringPlugins/wmi_subprocess.py
 pyMonitoringPlugins.egg-info/PKG-INFO
 pyMonitoringPlugins.egg-info/SOURCES.txt

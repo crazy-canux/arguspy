@@ -3,7 +3,7 @@
 """Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
 
 All rights reserved.
-Name: test_winrm.py
+Name: check_winrm.py
 Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
 Time: Thur 01 Aug 2016 04:43:40 PM CST
@@ -13,8 +13,7 @@ Description:
 """
 import sys
 
-sys.path.append("../")
-from winrm_pywinrm import WinRM
+from pyMonitoringPlugins.winrm_pywinrm import WinRM
 
 
 class SqlserverLocks(WinRM):
@@ -61,23 +60,11 @@ class SqlserverLocks(WinRM):
         self.logger.debug("results: {}".format(self.__results))
         self.__results_list = self.__results.split()
         self.logger.debug("results list: {}".format(self.__results_list))
-        # ['Name', ':', 'OibTrackTbl', 'LockTimeoutsPersec', ':', '0']
         self.__results_format_list = []
         [self.__results_format_list.append(value) for value in self.__results_list if value != ":" and value != "Name" and value != self.args.mode]
         self.logger.debug("results format list: {}".format(self.__results_format_list))
-        # ['OibTrackTbl', '0', 'AllocUnit', '0', 'HoBT', '0', 'Metadata', '0']
-        self.__results_format_dict = []
-        for loop in range(0, len(self.__results_format_list)):
-            if loop % 2 == 0:
-                Name = self.__results_format_list[loop]
-            else:
-                Value = self.__results_format_list[loop]
-                one_dict = {"Name": Name, self.args.mode: Value}
-                self.__results_format_dict.append(one_dict)
-        self.logger.debug("results format dict: {}".format(self.__results_format_dict))
-        # [{'LockTimeoutsPersec': '0', 'Name': 'File'}, {'LockTimeoutsPersec': '0', 'Name': 'Database'}]
-
-        for lock_dict in self.__results_format_dict:
+        # ['Name', ':', 'OibTrackTbl', 'LockTimeoutsPersec', ':', '0']
+        for lock_dict in self.__results:
             self.name = lock_dict.get('Name')
             self.logger.debug("name: {}".format(self.name))
             self.value = int(lock_dict.get(self.args.mode))
