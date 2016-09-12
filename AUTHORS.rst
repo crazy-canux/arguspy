@@ -2,4 +2,4 @@
 Authors
 =======
 
-* `[Canux CHENG](http://crazy-canux.github.io/) <canuxcheng@gmail.com>`_
+* `Canux CHENG <http://crazy-canux.github.io/>`_
