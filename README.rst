@@ -50,9 +50,10 @@ Also you can pull request for your code.
 TODO
 -----
 
-1. snmp
-2. http
-3. pyMonitoringPlugins/docs build with sphinx
+1. pyMonitoringPlugins/docs build with sphinx
+2. snmp
+3. http
+4. vmware-vsphere
 
 ============
 Contribution
