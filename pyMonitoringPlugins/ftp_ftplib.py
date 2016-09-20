@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+"""
+Basic function for ftp build with python standard library ftplib.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: ftp_ftplib.py
 Author: Canux CHENG canuxcheng@gmail.com

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+"""
+Basic function for Windows Management Instrumentation build with third party library sh.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: wmi_sh.py
 Author: Canux CHENG canuxcheng@gmail.com

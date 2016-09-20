@@ -1,3 +1,6 @@
+
+[![Coverage Status](https://coveralls.io/repos/github/crazy-canux/pyMonitoringPlugins/badge.svg?branch=master)](https://coveralls.io/github/crazy-canux/pyMonitoringPlugins?branch=master)
+
 ===================
 pyMonitoringPlugins
 ===================
@@ -50,10 +53,10 @@ Also you can pull request for your code.
 TODO
 -----
 
-1. pyMonitoringPlugins/docs build with sphinx
-2. snmp
-3. http
-4. vmware-vsphere
+1. pyMonitoringPlugins/docs build with sphinx(2.0)
+2. http(1.2)
+3. snmp(1.3)
+4. vmware-vsphere(1.4)
 
 ============
 Contribution

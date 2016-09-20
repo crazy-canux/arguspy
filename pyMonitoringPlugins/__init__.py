@@ -3,7 +3,7 @@
 """
 Plugins for Nagios/Icinga and other monitoring tools.
 
-Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: __init__.py
 Author: Canux CHENG canuxcheng@gmail.com
@@ -14,5 +14,5 @@ Example:
     import pyMonitoringPlugins
 """
 
-__version__ = "1.1.1.0"
+__version__ = "1.2.1.0"
 __author__ = "Canux CHENG"

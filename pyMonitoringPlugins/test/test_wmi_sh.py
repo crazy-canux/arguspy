@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+r"""Copyright (C) 2016 Canux CHENG.
 
 All rights reserved.
 Name: test_wmi_sh.py

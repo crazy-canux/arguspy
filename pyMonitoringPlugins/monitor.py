@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+"""
+Basic functions for monitoring tools like nagios/icinga.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: monitor.py
 Author: Canux CHENG canuxcheng@gmail.com

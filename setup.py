@@ -3,7 +3,7 @@
 """
 Setup file used for install this package.
 
-Copyright (C) 2015 Faurecia (China) Holding Co.,Ltd.
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: setup.py
 Author: Canux CHENG canuxcheng@gmail.com
