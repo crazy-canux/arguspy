@@ -1,5 +1,6 @@
 
-[![Coverage Status](https://coveralls.io/repos/github/crazy-canux/pyMonitoringPlugins/badge.svg?branch=master)](https://coveralls.io/github/crazy-canux/pyMonitoringPlugins?branch=master)
+.. image:: https://coveralls.io/repos/github/crazy-canux/pyMonitoringPlugins/badge.svg?branch=master
+    :target: https://coveralls.io/github/crazy-canux/pyMonitoringPlugins?branch=master
 
 ===================
 pyMonitoringPlugins
