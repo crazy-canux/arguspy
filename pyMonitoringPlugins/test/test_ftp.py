@@ -111,7 +111,7 @@ class Register(FileNumber):
         super(Register, self).__init__(*args, **kwargs)
 
 
-def main():
+def test_ftp():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -119,6 +119,3 @@ def main():
         plugin.filenumber_handle()
     else:
         plugin.unknown("Unknown actions.")
-
-if __name__ == "__main__":
-    main()

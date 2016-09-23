@@ -1,4 +1,7 @@
 
+.. image:: https://img.shields.io/pypi/v/pyMonitoringPlugins.svg?maxAge=2592000
+   :target: https://pypi.python.org/pypi/pyMonitoringPlugins/1.1.1.0
+
 .. image:: https://coveralls.io/repos/github/crazy-canux/pyMonitoringPlugins/badge.svg?branch=master
     :target: https://coveralls.io/github/crazy-canux/pyMonitoringPlugins?branch=master
 
