@@ -14,7 +14,7 @@ Description:
 import sys
 import datetime
 
-from pyMonitoringPlugins.wmi_subprocess import Wmi
+from pymonitoringplugins.wmi_subprocess import Wmi
 
 
 class FileNumber(Wmi):

@@ -13,7 +13,7 @@ Description:
 """
 import sys
 
-from pyMonitoringPlugins.mysql_pymysql import Mysql
+from pymonitoringplugins.mysql_pymysql import Mysql
 
 
 class Sql(Mysql):

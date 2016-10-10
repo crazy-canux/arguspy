@@ -13,7 +13,7 @@ Description:
 """
 import sys
 
-from pyMonitoringPlugins.ftp_ftplib import Ftp
+from pymonitoringplugins.ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):

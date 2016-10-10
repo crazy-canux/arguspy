@@ -1,15 +1,15 @@
 
-.. image:: https://img.shields.io/pypi/v/pyMonitoringPlugins.svg?maxAge=2592000
-   :target: https://pypi.python.org/pypi/pyMonitoringPlugins/1.1.1.0
+.. image:: https://img.shields.io/pypi/v/pymonitoringplugins.svg?maxAge=2592000
+   :target: https://pypi.python.org/pypi/pymonitoringplugins/1.1.1.0
 
-.. image:: https://coveralls.io/repos/github/crazy-canux/pyMonitoringPlugins/badge.svg?branch=master
-    :target: https://coveralls.io/github/crazy-canux/pyMonitoringPlugins?branch=master
+.. image:: https://coveralls.io/repos/github/crazy-canux/pymonitoringplugins/badge.svg?branch=master
+    :target: https://coveralls.io/github/crazy-canux/pymonitoringplugins?branch=master
 
 ===================
-pyMonitoringPlugins
+pymonitoringplugins
 ===================
 
-pyMonitoringPlugins is pure python code.
+pymonitoringplugins is pure python code.
 
 It's a API packge for monitoring plugins, like nagios or icinga.
 
@@ -21,7 +21,7 @@ How to install
 
 Use pip to install:
 
-    pip install pyMonitoringPlugins
+    pip install pymonitoringplugins
 
 ----------
 How to use
@@ -29,21 +29,21 @@ How to use
 
 Just import what protocol you need:
 
-    from pyMonitoringPlugins.<protocol_package> import <Class>
+    from pymonitoringplugins.<protocol_package> import <Class>
 
-    from pyMonitoringPlugins.ftp_ftplib import Ftp
+    from pymonitoringplugins.ftp_ftplib import Ftp
 
-    from pyMonitoringPlugins.mssql_pymssql import Mssql
+    from pymonitoringplugins.mssql_pymssql import Mssql
 
-    from pyMonitoringPlugins.mysql_pymysql import Mysql
+    from pymonitoringplugins.mysql_pymysql import Mysql
 
-    from pyMonitoringPlugins.ssh_paramiko import Ssh
+    from pymonitoringplugins.ssh_paramiko import Ssh
 
-    from pyMonitoringPlugins.winrm_pywinrm import WinRM
+    from pymonitoringplugins.winrm_pywinrm import WinRM
 
-    from pyMonitoringPlugins.wmi_sh import Wmi
+    from pymonitoringplugins.wmi_sh import Wmi
 
-    from pyMonitoringPlugins.wmi_subprocess import Wmi
+    from pymonitoringplugins.wmi_subprocess import Wmi
 
 --------------
 How to extends
@@ -57,7 +57,7 @@ Also you can pull request for your code.
 TODO
 -----
 
-1. pyMonitoringPlugins/docs build with sphinx(2.0)
+1. pymonitoringplugins/docs build with sphinx(2.0)
 2. http(1.2)
 3. snmp(1.3)
 4. vmware-vsphere(1.4)
@@ -66,16 +66,16 @@ TODO
 Contribution
 ============
 
-`[Contribution] <https://github.com/crazy-canux/pyMonitoringPlugins/blob/master/CONTRIBUTING.rst>`_
+`[Contribution] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/CONTRIBUTING.rst>`_
 
 =======
 Authors
 =======
 
-`[Authors] <https://github.com/crazy-canux/pyMonitoringPlugins/blob/master/AUTHORS.rst>`_
+`[Authors] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/AUTHORS.rst>`_
 
 =======
 License
 =======
 
-`[License] <https://github.com/crazy-canux/pyMonitoringPlugins/blob/master/LICENSE>`_
+`[License] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/LICENSE>`_

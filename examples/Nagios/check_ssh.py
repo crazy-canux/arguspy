@@ -13,7 +13,7 @@ Description:
 """
 import sys
 
-from pyMonitoringPlugins.ssh_paramiko import Ssh
+from pymonitoringplugins.ssh_paramiko import Ssh
 
 
 class Command(Ssh):

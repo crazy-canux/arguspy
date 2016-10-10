@@ -13,7 +13,7 @@ Description:
 """
 import sys
 
-from pyMonitoringPlugins.winrm_pywinrm import WinRM
+from pymonitoringplugins.winrm_pywinrm import WinRM
 
 
 class SqlserverLocks(WinRM):

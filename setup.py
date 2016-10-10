@@ -17,11 +17,11 @@ import os
 
 from setuptools import setup, find_packages
 
-import pyMonitoringPlugins
+import pymonitoringplugins
 
-NAME = 'pyMonitoringPlugins'
-VERSION = pyMonitoringPlugins.__version__
-URL = 'https://github.com/crazy-canux/pyMonitoringPlugins'
+NAME = 'pymonitoringplugins'
+VERSION = pymonitoringplugins.__version__
+URL = 'https://github.com/crazy-canux/pymonitoringplugins'
 
 
 def read(readme):
