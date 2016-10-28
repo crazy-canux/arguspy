@@ -14,6 +14,7 @@ Description:
     [1.0.0.0] 20160727 Init this plugin for basic functions.
 """
 import pymssql
+import sys
 
 from monitor import Monitor
 
@@ -22,9 +23,10 @@ class Mssql(Monitor):
 
     """Basic class for mssql."""
 
-    def __init__(self, *args, **kwargs):
-        super(Mssql, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Mssql, self).__init__()
         self.logger.debug("Init Mssql")
+
         try:
             self.conn = pymssql.connect(server=self.args.host,
                                         user=self.args.user,

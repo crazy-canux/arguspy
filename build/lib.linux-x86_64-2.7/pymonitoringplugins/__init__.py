@@ -11,8 +11,8 @@ Version: V1.0.0.0
 Time: Fri 05 Aug 2016 02:41:19 PM CST
 
 Example:
-    import pymonitoringplugins
+    from pymonitoringplugins.ftp_ftplib import Ftp
 """
 
-__version__ = "1.1.0.0"
+__version__ = "1.1.2.0"
 __author__ = "Canux CHENG"

@@ -10,6 +10,9 @@ Time: Thu 28 Jul 2016 03:23:45 PM CST
 
 Description:
     [1.0.0.0] 20160728 init for basic function.
+
+    Example:
+        ./test_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
 """
 import sys
 
@@ -26,8 +29,8 @@ class FileNumber(Ftp):
         -R
     """
 
-    def __init__(self, *args, **kwargs):
-        super(FileNumber, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(FileNumber, self).__init__()
         self.logger.debug("Init FileNumber")
 
     def define_sub_options(self):
@@ -98,17 +101,17 @@ class FileNumber(Ftp):
             result=self.__result,
             path=self.args.path))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class Register(FileNumber):
 
     """Register your own class here."""
 
-    def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Register, self).__init__()
 
 
 def test_ftp():
@@ -119,3 +122,6 @@ def test_ftp():
         plugin.filenumber_handle()
     else:
         plugin.unknown("Unknown actions.")
+
+if __name__ == "__main__":
+    test_ftp()

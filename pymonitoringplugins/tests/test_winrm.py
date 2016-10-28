@@ -21,8 +21,8 @@ class SqlserverLocks(WinRM):
 
     """Check the attribute related to MSSQLSERVER_SQLServerLocks wmi class use WinRM."""
 
-    def __init__(self, *args, **kwargs):
-        super(SqlserverLocks, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(SqlserverLocks, self).__init__()
         self.logger.debug("Init SqlserverLocks")
 
     def define_sub_options(self):
@@ -112,9 +112,9 @@ class SqlserverLocks(WinRM):
             result=len(self.crit_list),
             mode=self.args.mode))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class Register(SqlserverLocks):
@@ -122,10 +122,10 @@ class Register(SqlserverLocks):
     """Register your own class here."""
 
     def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+        super(Register, self).__init__()
 
 
-def main():
+def test_winrm():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -135,4 +135,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_winrm()

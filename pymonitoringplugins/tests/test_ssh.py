@@ -21,8 +21,8 @@ class Command(Ssh):
 
     """Run a command by SSH and return a single number."""
 
-    def __init__(self, *args, **kwargs):
-        super(Command, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Command, self).__init__()
         self.logger.debug("Init Command")
 
     def define_sub_options(self):
@@ -79,20 +79,20 @@ class Command(Ssh):
             result=self.__result,
             command=self.args.command))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class Register(Command):
 
     """Register your own class here."""
 
-    def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Register, self).__init__()
 
 
-def main():
+def test_ssh():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -102,4 +102,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_ssh()

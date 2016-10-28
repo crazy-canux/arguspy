@@ -28,9 +28,10 @@ class WinRM(Monitor):
 
     """Basic class for WinRM."""
 
-    def __init__(self, *args, **kwargs):
-        super(WinRM, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(WinRM, self).__init__()
         self.logger.debug("Init WinRM")
+
         try:
             self.session = winrm.Session(self.args.host,
                                          auth=(self.args.domain + '\\' + self.args.user, self.args.password),

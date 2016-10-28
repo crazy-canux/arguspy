@@ -22,8 +22,8 @@ class Sql(Mssql):
 
     """Just for the return value is a single number."""
 
-    def __init__(self, *args, **kwargs):
-        super(Sql, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Sql, self).__init__()
         self.logger.debug("Init Sql")
 
     def define_sub_options(self):
@@ -88,57 +88,57 @@ class Sql(Mssql):
             result=self.__result,
             sql=self.args.sql))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class DatabaseUsed(Mssql):
 
     """For check the database-size, database-used, database-percent."""
 
-    def __init__(self, *args, **kwargs):
-        super(DatabaseUsed, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(DatabaseUsed, self).__init__()
         self.logger.debug("Init databaseused")
 
     def define_sub_options(self):
         super(DatabaseUsed, self).define_sub_options()
         self.du_parser = self.subparsers.add_parser('database-used',
-                                                    help='For\
+                                                    help='for\
                                                     database-used.',
-                                                    description='Options\
+                                                    description='options\
                                                     for database-used.')
         self.du_parser.add_argument('-w', '--warning',
                                     default=0,
                                     type=int,
                                     required=False,
-                                    help='Warning value for data file, default is %(default)s',
+                                    help='warning value for data file, default is %(default)s',
                                     dest='warning')
         self.du_parser.add_argument('-c', '--critical',
                                     default=0,
                                     type=int,
                                     required=False,
-                                    help='Critical value for data file, default is %(default)s',
+                                    help='critical value for data file, default is %(default)s',
                                     dest='critical')
         self.du_parser.add_argument('-r', '--regex',
                                     required=False,
-                                    help='Specify the DB you want.',
+                                    help='specify the db you want.',
                                     dest='regex')
         self.du_parser.add_argument('--as_dict',
                                     default=True,
                                     type=bool,
                                     required=False,
-                                    help='Set the return mode.',
+                                    help='set the return mode.',
                                     dest='as_dict')
 
     def database_used_handle(self):
         self.database_used_sql = """
-SET  NOCOUNT ON;
-SET  ANSI_NULLS ON;
-SET  QUOTED_IDENTIFIER ON;
+set  nocount on;
+set  ansi_nulls on;
+set  quoted_identifier on;
 
-DECLARE
-  @SQL     NVARCHAR(4000),
+declare
+  @sql     nvarchar(4000),
   @dbname  sysname;
 
 declare
@@ -154,27 +154,27 @@ declare
                 select name from sys.databases order by database_id;
 
 open dbcursor;
-fetch NEXT FROM dbcursor INTO @dbname;
+fetch next from dbcursor into @dbname;
 
-while @@FETCH_STATUS = 0
-BEGIN
-  set @SQL='use ' + quotename(@dbname) + '; SELECT ''' +  @dbname + ''' as dbname' +
-       ', (SELECT SUM(CAST(size AS FLOAT)) / 128 FROM sys.database_files WHERE  type IN (0, 2, 4)) dbsize' +
-       ', SUM(CAST(a.total_pages AS FLOAT)) / 128 reservedsize' +
-       ', (SELECT SUM(CAST(size AS FLOAT)) / 128 FROM sys.database_files WHERE  type IN (1, 3)) logsize' +
-       ', (select sum(cast(fileproperty(name, ''SpaceUsed'') as float))/128 from sys.database_files where type in (1,3)) logUsedMB' +
-       ' FROM ' + quotename(@dbname) + '.sys.partitions p' +
-       ' INNER JOIN ' + quotename(@dbname) + '.sys.allocation_units a ON p.partition_id = a.container_id' +
-       ' LEFT OUTER JOIN ' + quotename(@dbname) + '.sys.internal_tables it ON p.object_id = it.object_id';
+while @@fetch_status = 0
+begin
+  set @sql='use ' + quotename(@dbname) + '; select ''' +  @dbname + ''' as dbname' +
+       ', (select sum(cast(size as float)) / 128 from sys.database_files where  type in (0, 2, 4)) dbsize' +
+       ', sum(cast(a.total_pages as float)) / 128 reservedsize' +
+       ', (select sum(cast(size as float)) / 128 from sys.database_files where  type in (1, 3)) logsize' +
+       ', (select sum(cast(fileproperty(name, ''spaceused'') as float))/128 from sys.database_files where type in (1,3)) logusedmb' +
+       ' from ' + quotename(@dbname) + '.sys.partitions p' +
+       ' inner join ' + quotename(@dbname) + '.sys.allocation_units a on p.partition_id = a.container_id' +
+       ' left outer join ' + quotename(@dbname) + '.sys.internal_tables it on p.object_id = it.object_id';
 
   insert into @datatab
-  execute(@SQL);
-  --print @SQL
-  fetch NEXT FROM dbcursor INTO @dbname;
+  execute(@sql);
+  --print @sql
+  fetch next from dbcursor into @dbname;
 end;
 
-CLOSE dbcursor;
-DEALLOCATE dbcursor;
+close dbcursor;
+deallocate dbcursor;
 
 select  name
       , dbsize
@@ -211,7 +211,7 @@ from @datatab d order by name;
             line_dict = self.__new_results[loop]
             dbsize = float(line_dict['dbsize'])
 
-            # Compare the db
+            # compare the db
             if self.args.warning:
                 if dbsize > self.args.warning:
                     self.__dbwarn.append(line_dict)
@@ -233,21 +233,20 @@ from @datatab d order by name;
             self.__result = self.__dbcrit
             self.__result_rest = self.__dbcrit_rest
 
-        # Output for nagios
         self.shortoutput = "{0} db, {1} db warning, {2} db critical.".format(
             len(self.__new_results), len(self.__dbwarn), len(self.__dbcrit))
         self.longoutput.append("---------------------------------\n")
         self.__write_longoutput(self.__result)
-        self.longoutput.append("=============== OK ===============\n")
+        self.longoutput.append("=============== ok ===============\n")
         self.__write_longoutput(self.__result_rest)
-        self.perfdata.append("\nError number={result};{warn};{crit};0;".format(
+        self.perfdata.append("\nerror number={result};{warn};{crit};0;".format(
             crit=self.args.critical,
             warn=self.args.warning,
             result=len(self.__result)))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
     def __write_longoutput(self, result):
         try:
@@ -260,9 +259,9 @@ from @datatab d order by name;
                             if key == 'dbpercent':
                                 unit = "%"
                             elif key == 'dbsize':
-                                unit = "MB"
+                                unit = "mb"
                             elif key == 'dbused':
-                                unit = "MB"
+                                unit = "mb"
                             else:
                                 unit = ""
                             line = key + ": " + value + unit
@@ -274,10 +273,10 @@ from @datatab d order by name;
 
 class DatabaseLogUsed(Mssql):
 
-    """For check database-log-size, database-log-used, database-log-percent."""
+    """for check database-log-size, database-log-used, database-log-percent."""
 
-    def __init__(self, *args, **kwargs):
-        super(DatabaseLogUsed, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(DatabaseLogUsed, self).__init__()
         self.logger.debug("Init databaselogused")
 
     def define_sub_options(self):
@@ -412,7 +411,6 @@ from @datatab d order by name;
             self.__result = self.__logcrit
             self.__result_rest = self.__logcrit_rest
 
-        # Output for nagios
         self.shortoutput = "{0} dblog, {1} warning, {2} critical.".format(
             len(self.__new_results), len(self.__logwarn), len(self.__logcrit))
         self.longoutput.append("---------------------------------\n")
@@ -424,9 +422,9 @@ from @datatab d order by name;
             warn=self.args.warning,
             result=len(self.__result)))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
     def __write_longoutput(self, result):
         try:
@@ -448,19 +446,18 @@ from @datatab d order by name;
                             self.longoutput.append(line + "\n")
                         self.longoutput.append("---------------------------\n")
         except Exception as e:
-            self.unknown("databaselog-used write_longoutput error: {}".format(
-                e))
+            self.unknown("databaselog-used write_longoutput error: {}".format(e))
 
 
 class Register(Sql, DatabaseUsed, DatabaseLogUsed):
 
     """Register your own class here."""
 
-    def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Register, self).__init__()
 
 
-def main():
+def test_mssql():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -474,4 +471,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_mssql()

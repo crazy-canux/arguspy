@@ -25,9 +25,10 @@ class Ssh(Monitor):
 
     """Basic class for ssh."""
 
-    def __init__(self, *args, **kwargs):
-        super(Ssh, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Ssh, self).__init__()
         self.logger.debug("Init Ssh")
+
         try:
             self.ssh = paramiko.SSHClient()
             self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())

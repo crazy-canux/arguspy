@@ -22,9 +22,10 @@ class Mysql(Monitor):
 
     """Basic class for mysql."""
 
-    def __init__(self, *args, **kwargs):
-        super(Mysql, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Mysql, self).__init__()
         self.logger.debug("Init Mysql")
+
         try:
             self.conn = pymysql.connect(host=self.args.host,
                                         user=self.args.user,

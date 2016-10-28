@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pymonitoringplugins
-Version: 1.1.0.0
+Version: 1.1.2.0
 Summary: Common interface of tons protocals, used for monitoring tools, like nagios/icinga...
 Home-page: https://github.com/crazy-canux/pymonitoringplugins
 Author: Canux CHENG
@@ -35,23 +35,65 @@ Description:
         How to use
         ----------
         
-        Just import what protocol you need:
-        
-            from pymonitoringplugins.<protocol_package> import <Class>
+        Just import what protocol you need::
         
             from pymonitoringplugins.ftp_ftplib import Ftp
-        
             from pymonitoringplugins.mssql_pymssql import Mssql
-        
             from pymonitoringplugins.mysql_pymysql import Mysql
-        
             from pymonitoringplugins.ssh_paramiko import Ssh
-        
             from pymonitoringplugins.winrm_pywinrm import WinRM
-        
             from pymonitoringplugins.wmi_sh import Wmi
-        
             from pymonitoringplugins.wmi_subprocess import Wmi
+        
+        Then write your own function monitoring class::
+        
+            class YourClass(Ftp/Mssql/Ssh/WinRM/Wmi/...):
+                def __init__(self):
+                    super(YourClass, self).__init__()
+                    self.logger.debug("Init YourClass.")
+        
+                def define_sub_options(self):
+                    super(YourClass, self).define_sub_options()
+                    self.your_parser = self.subparsers.add_parser(...)
+                    self.your_parser.add_argument(...)
+                    ...
+        
+                def your_handle(self):
+                    """Put your function monitoring code here."""
+                    # Default status is ok.
+                    status = self.ok
+                    # Call the method and get the monitoring data.
+                    ...
+                    #  Compare with the warning and critical value and change the status.
+                    ...
+                    self.shortoutput = "..."
+                    self.longoutput.append(...)
+                    self.perfdata.append(...)
+                    self.logger.debug("Return status and output.")
+                    status(self.output())
+        
+        If you put more than one function monitoring class in one file(Not recommend)::
+        
+            class Register(YourClass1, YourClass2, ...):
+                def __init__(self):
+                    super(Register, self).__init__()
+        
+        Last step::
+        
+            def main():
+                # For multiple inherit
+                # plugin = Register()
+                plugin = YourClass()
+                arguments = sys.argv[1:]
+                if 'your' in arguments:
+                    plugin.your_handle()
+                elif 'your2' in arguments:
+                    plugin.your2_handle()
+                else:
+                    plugin.unknown("Unknown actions.")
+        
+            if __name__ == "__main__":
+                main()
         
         --------------
         How to extends

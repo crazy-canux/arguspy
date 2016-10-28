@@ -25,8 +25,8 @@ class Wmi(Monitor):
 
     """Basic class for wmi."""
 
-    def __init__(self, *args, **kwargs):
-        super(Wmi, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Wmi, self).__init__()
         self.logger.debug("Init Wmi")
 
     def query(self, wql):

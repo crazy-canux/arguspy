@@ -21,3 +21,11 @@ pymonitoringplugins.egg-info/dependency_links.txt
 pymonitoringplugins.egg-info/not-zip-safe
 pymonitoringplugins.egg-info/requires.txt
 pymonitoringplugins.egg-info/top_level.txt
+pymonitoringplugins/tests/__init__.py
+pymonitoringplugins/tests/test_ftp.py
+pymonitoringplugins/tests/test_mssql.py
+pymonitoringplugins/tests/test_mysql.py
+pymonitoringplugins/tests/test_ssh.py
+pymonitoringplugins/tests/test_winrm.py
+pymonitoringplugins/tests/test_wmi_sh.py
+pymonitoringplugins/tests/test_wmi_subprocess.py

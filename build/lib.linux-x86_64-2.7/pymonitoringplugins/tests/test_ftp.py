@@ -3,7 +3,7 @@
 """Copyright (C) 2016 Canux CHENG.
 
 All rights reserved.
-Name: check_ftp.py
+Name: test_ftp.py
 Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
 Time: Thu 28 Jul 2016 03:23:45 PM CST
@@ -11,12 +11,13 @@ Time: Thu 28 Jul 2016 03:23:45 PM CST
 Description:
     [1.0.0.0] 20160728 init for basic function.
 
-    example:
-        ./check_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
+    Example:
+        ./test_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
 """
 import sys
 
-from pymonitoringplugins.ftp_ftplib import Ftp
+sys.path.append("../")
+from ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):
@@ -100,6 +101,7 @@ class FileNumber(Ftp):
             result=self.__result,
             path=self.args.path))
 
+        # Return status and output to monitoring server.
         self.logger.debug("Return status and output.")
         status(self.output())
 
@@ -112,7 +114,7 @@ class Register(FileNumber):
         super(Register, self).__init__()
 
 
-def main():
+def test_ftp():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -122,4 +124,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_ftp()

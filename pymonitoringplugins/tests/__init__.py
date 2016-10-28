@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Plugins for Nagios/Icinga and other monitoring tools.
+Test package.
 
 Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: __init__.py
 Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
-Time: Fri 05 Aug 2016 02:41:19 PM CST
-
-Example:
-    import pymonitoringplugins
+Time: Sun 23 Oct 2016 10:10:29 AM EDT
 """
-
-__version__ = "1.1.1.0"
-__author__ = "Canux CHENG"

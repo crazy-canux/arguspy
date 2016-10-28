@@ -21,8 +21,8 @@ class Sql(Mysql):
 
     """Just for the return value is a single number."""
 
-    def __init__(self, *args, **kwargs):
-        super(Sql, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Sql, self).__init__()
         self.logger.debug("Init Sql")
 
     def define_sub_options(self):
@@ -81,20 +81,20 @@ class Sql(Mysql):
             result=self.__result,
             sql=self.args.sql))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class Register(Sql):
 
     """Register your own class here."""
 
-    def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Register, self).__init__()
 
 
-def main():
+def test_mysql():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -104,4 +104,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_mysql()

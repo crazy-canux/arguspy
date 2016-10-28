@@ -22,12 +22,10 @@ class Ftp(Monitor):
 
     """Basic class for ftp."""
 
-    def __init__(self, *args, **kwargs):
-        super(Ftp, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Ftp, self).__init__()
         self.logger.debug("Init Ftp")
 
-    def connect(self):
-        """Connect to ftp server."""
         try:
             self.ftp = ftplib.FTP()
             self.ftp.connect(host=self.args.host,
@@ -37,9 +35,12 @@ class Ftp(Monitor):
                            passwd=self.args.password,
                            acct=self.args.acct)
             self.logger.debug("ftp connect succeed.")
-            return self.ftp
-        except ftplib.Error as e:
+        except Exception as e:
             self.unknown("Can not connect to the ftp: %s" % e)
+
+    def connect(self):
+        """Connect to ftp server."""
+        return self.ftp
 
     def quit(self):
         """Close and exit the connection."""

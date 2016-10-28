@@ -3,14 +3,13 @@
 r"""Copyright (C) 2016 Canux CHENG.
 
 All rights reserved.
-Name: test_wmi_sh.py
+Name: test_wmi_subprocess.py
 Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
 Time: Mon 08 Aug 2016 04:43:40 PM CST
 
 Description:
     [1.0.0.0] 20160728 init for basic function.
-
 Example:
     check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -r
     check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\' -f '%%' -e '%%' -r
@@ -28,15 +27,15 @@ import sys
 import datetime
 
 sys.path.append("../")
-from wmi_sh import Wmi
+from wmi_subprocess import Wmi
 
 
 class FileNumber(Wmi):
 
-    """Count the number of file in the folder."""
+    r"""Count the number of file in the folder."""
 
-    def __init__(self, *args, **kwargs):
-        super(FileNumber, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(FileNumber, self).__init__()
         self.logger.debug("Init FileNumber")
 
     def define_sub_options(self):
@@ -139,17 +138,17 @@ class FileNumber(Wmi):
             result=self.__result,
             path=self.args.path))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class FileAge(Wmi):
 
     """Get the file age, compare with the current date and time."""
 
-    def __init__(self, *args, **kwargs):
-        super(FileAge, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(FileAge, self).__init__()
         self.logger.debug("Init FileAge")
 
     def define_sub_options(self):
@@ -296,17 +295,17 @@ class FileAge(Wmi):
             result=len(self.crit_file),
             path=self.args.drive + self.args.path))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class SqlserverLocks(Wmi):
 
     """Check the attribute related to MSSQLSERVER_SQLServerLocks wmi class."""
 
-    def __init__(self, *args, **kwargs):
-        super(SqlserverLocks, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(SqlserverLocks, self).__init__()
         self.logger.debug("Init SqlserverLocks")
 
     def define_sub_options(self):
@@ -389,20 +388,20 @@ class SqlserverLocks(Wmi):
             result=len(self.crit_list),
             mode=self.args.mode))
 
-        # Return status with message to Nagios.
-        status(self.output(long_output_limit=None))
-        self.logger.debug("Return status and exit to Nagios.")
+        # Return status and output to monitoring server.
+        self.logger.debug("Return status and output.")
+        status(self.output())
 
 
 class Register(FileNumber, FileAge, SqlserverLocks):
 
     """Register your own class here."""
 
-    def __init__(self, *args, **kwargs):
-        super(Register, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(Register, self).__init__()
 
 
-def main():
+def test_wmi():
     """Register your own mode and handle method here."""
     plugin = Register()
     arguments = sys.argv[1:]
@@ -416,4 +415,4 @@ def main():
         plugin.unknown("Unknown actions.")
 
 if __name__ == "__main__":
-    main()
+    test_wmi()
