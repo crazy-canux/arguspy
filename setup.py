@@ -22,6 +22,8 @@ import pymonitoringplugins
 NAME = 'pymonitoringplugins'
 VERSION = pymonitoringplugins.__version__
 URL = 'https://github.com/crazy-canux/pymonitoringplugins'
+DESCRIPTION='Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
+KEYWORDS='monitoring nagios icinga plugins'
 
 
 def read(readme):
@@ -50,15 +52,15 @@ setup(
     name=NAME,
     version=VERSION,
     url=URL,
+    description=DESCRIPTION,
+    keywords=KEYWORDS,
     author='Canux CHENG',
     author_email='canuxcheng@gmail.com',
     maintainer='Canux CHENG',
     maintainer_email='canuxcheng@gmail.com',
-    description='Common interface of tons protocals, used for monitoring tools, like nagios/icinga...',
     long_description=read('README.rst'),
     license='GPL',
     platforms='any',
-    keywords='monitoring nagios icinga plugins',
     install_requires=INSTALL_REQUIRES,
     packages=find_packages(),
     zip_safe=False,
@@ -67,6 +69,7 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Environment :: Plugins",
         "Intended Audience :: Developers",
+        "Natural Language :: English",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Operating System :: POSIX",
         "Programming Language :: Python",
