@@ -1,2 +1,4 @@
 include LICENSE README.rst AUTHORS.rst CONTRIBUTING.rst
 recursive-include docs *
+graft examples
+global-exclude *.py[co]
