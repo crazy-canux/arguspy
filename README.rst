@@ -1,6 +1,9 @@
 .. image:: https://img.shields.io/pypi/v/nine.svg
    :target: https://pypi.python.org/pypi/pymonitoringplugins/1.1.0.0
 
+.. image:: https://img.shields.io/pypi/dm/Django.svg
+   :target: https://pypi.python.org/pypi/pymonitoringplugins/1.1.0.0
+
 ===================
 pymonitoringplugins
 ===================
