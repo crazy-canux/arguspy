@@ -1,6 +1,5 @@
-
-.. image:: https://img.shields.io/pypi/v/pymonitoringplugins.svg?maxAge=2592000
-   :target: https://pypi.python.org/pypi/pymonitoringplugins/1.1.1.0
+.. image:: https://img.shields.io/pypi/v/nine.svg
+   :target: https://pypi.python.org/pypi/pymonitoringplugins/
 
 ===================
 pymonitoringplugins
