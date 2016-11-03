@@ -5,6 +5,17 @@ MANIFEST.in
 README.rst
 setup.cfg
 setup.py
+examples/.ropeproject/config.py
+examples/.ropeproject/globalnames
+examples/.ropeproject/history
+examples/.ropeproject/objectdb
+examples/Nagios/check_ftp.py
+examples/Nagios/check_mssql.py
+examples/Nagios/check_mysql.py
+examples/Nagios/check_ssh.py
+examples/Nagios/check_winrm.py
+examples/Nagios/check_wmi_sh.py
+examples/Nagios/check_wmi_subprocess.py
 pymonitoringplugins/__init__.py
 pymonitoringplugins/ftp_ftplib.py
 pymonitoringplugins/http_requests.py

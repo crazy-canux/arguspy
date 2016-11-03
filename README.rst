@@ -110,6 +110,12 @@ TODO
 3. http(1.3)
 4. snmp(1.4)
 
+=============
+Documentation
+=============
+
+`[Documentation] <http://pymonitoringplugins.readthedocs.io/en/latest/>`_
+
 ============
 Contribution
 ============
