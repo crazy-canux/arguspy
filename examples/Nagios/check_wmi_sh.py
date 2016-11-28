@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2016 Canux CHENG.
+"""
+Wmi plugins build with this library.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: check_wmi_sh.py
 Author: Canux CHENG canuxcheng@gmail.com

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2016 Canux CHENG.
+"""
+Test ftp with ftplib.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: test_ftp.py
 Author: Canux CHENG canuxcheng@gmail.com
@@ -15,8 +17,9 @@ Description:
         ./test_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
 """
 import sys
+import os
 
-sys.path.append("../")
+sys.path.insert(0, os.path.abspath('..'))
 from ftp_ftplib import Ftp
 
 

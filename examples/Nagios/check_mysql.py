@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2016 Canux CHENG.
+"""
+Mysql plugins build with this library.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: check_mysql.py
 Author: Canux CHENG canuxcheng@gmail.com
@@ -52,9 +54,9 @@ class Sql(Mysql):
     def sql_handle(self):
         self.__results = self.query(self.args.sql)
         self.close()
+        self.logger.debug("results: {}".format(self.__results))
         if not self.__results:
             self.unknown("SP/SQL return nothing.")
-        self.logger.debug("results: {}".format(self.__results))
         if len(self.__results) != 1:
             self.unknown("SP/SQL return more than one number.")
         self.__result = self.__results[0][0]

@@ -58,7 +58,7 @@ class Ftp(Monitor):
                                                      description="Action mode for ftp.",
                                                      help="Specify your action for ftp.")
         self.ftp_parser.add_argument('-P', '--port',
-                                     default='21',
+                                     default=21,
                                      type=int,
                                      required=False,
                                      help='ftp server port, default is %(default)s',

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""Copyright (C) 2016 Canux CHENG.
+r"""
+Test wmi with sh.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: test_wmi_sh.py
 Author: Canux CHENG canuxcheng@gmail.com
@@ -25,9 +27,10 @@ Example:
     check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m NumberofDeadlocksPersec -w 0 -c 0
 """
 import sys
+import os
 import datetime
 
-sys.path.append("../")
+sys.path.insert(0, os.path.abspath('..'))
 from wmi_sh import Wmi
 
 

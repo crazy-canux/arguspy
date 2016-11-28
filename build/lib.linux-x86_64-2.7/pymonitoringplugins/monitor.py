@@ -94,14 +94,17 @@ class Monitor(object):
         self.plugin_parser = self.parser.add_argument_group("Plugin Options",
                                                             "Options for all plugins.")
         self.plugin_parser.add_argument("-H", "--host",
+                                        default='127.0.0.1',
                                         required=True,
                                         help="Host IP address or DNS",
                                         dest="host")
         self.plugin_parser.add_argument("-u", "--user",
+                                        default=None,
                                         required=False,
                                         help="User name",
                                         dest="user")
         self.plugin_parser.add_argument("-p", "--password",
+                                        default=None,
                                         required=False,
                                         help="User password",
                                         dest="password")

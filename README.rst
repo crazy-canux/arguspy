@@ -10,7 +10,7 @@ pymonitoringplugins
 
 pymonitoringplugins is pure python code.
 
-It's a API packge for monitoring plugins, like nagios or icinga.
+It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
 
 `[awesome-monitoring] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
@@ -29,6 +29,7 @@ How to use
 Just import what protocol you need::
 
     from pymonitoringplugins.ftp_ftplib import Ftp
+    from pymonitoringplugins.http_requests import Http
     from pymonitoringplugins.mssql_pymssql import Mssql
     from pymonitoringplugins.mysql_pymysql import Mysql
     from pymonitoringplugins.ssh_paramiko import Ssh
@@ -106,9 +107,9 @@ TODO
 -----
 
 1. pymonitoringplugins/docs build with sphinx(2.0)
-2. Thresholders need follow nagios rules(1.2)
-3. http(1.3)
-4. snmp(1.4)
+2. http(1.2)
+3. snmp(1.3)
+4. Thresholders need follow nagios rules(1.4)
 
 =============
 Documentation

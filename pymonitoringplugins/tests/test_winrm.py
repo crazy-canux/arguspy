@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Copyright (C) 2016 Canux CHENG.
+"""
+Test winrm with pywinrm.
 
+Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: test_winrm.py
 Author: Canux CHENG canuxcheng@gmail.com
@@ -12,8 +14,9 @@ Description:
     [1.0.0.0] 20160728 init for basic function.
 """
 import sys
+import os
 
-sys.path.append("../")
+sys.path.insert(0, os.path.abspath('..'))
 from winrm_pywinrm import WinRM
 
 
