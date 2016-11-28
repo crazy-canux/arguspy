@@ -106,10 +106,9 @@ Also you can pull request for your code.
 TODO
 -----
 
-1. pymonitoringplugins/docs build with sphinx(2.0)
-2. http(1.2)
+1. pymonitoringplugins/docs build with sphinx(1.5)
+2. Thresholders need follow nagios rules(1.4)
 3. snmp(1.3)
-4. Thresholders need follow nagios rules(1.4)
 
 =============
 Documentation
