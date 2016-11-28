@@ -7,7 +7,7 @@
 Welcome to pymonitoringplugins
 ==============================
 
-pymonitoringplugins is a pure python package for `[monitoring-plugins] <`[awesome-monitoring] <https://github.com/crazy-canux/awesome-monitoring>`_.
+pymonitoringplugins is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
 In this package you can use lots of protocols to get the monitoring data.
 
