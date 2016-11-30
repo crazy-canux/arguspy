@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Basic function for http/https build with third party library requests and beautifuli soup 4.
+Basic function for http/https build with third party library requests.
 
 Copyright (C) 2016 Canux CHENG.
 All rights reserved.
