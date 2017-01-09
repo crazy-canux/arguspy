@@ -106,9 +106,12 @@ Also you can pull request for your code.
 TODO
 -----
 
-1. pymonitoringplugins/docs build with sphinx(1.5)
-2. Thresholders need follow nagios rules(1.4)
-3. snmp(1.3)
+1. Compatible with Python3(2.0)
+2. tivoli examples(1.7)
+3. check_mk examples(1.6)
+4. pymonitoringplugins/docs build with sphinx(1.5)
+5. Thresholders need follow nagios rules(1.4)
+6. snmp(1.3)
 
 =============
 Documentation
