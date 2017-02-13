@@ -14,13 +14,13 @@ Description:
     [1.0.0.0] 20160728 init for basic function.
 
 Example:
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\' -f '%%' -e '%%' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -R
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\' -f '%%' -e '%%' -R
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug filenumber -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -R
 Example:
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\' -f '%%' -e '%%' -r
-    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -r
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -R
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\' -f '%%' -e '%%' -R
+    check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug fileage -d 'C:' -p '\\Windows\\' -f '%%' -e '%%' -R
 Example:
     check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockTimeoutsPersec -w 0 -c 0
     check_wmi.py -H HOSTNAME -d [Domain] -u USER -p [password] --debug sqlserverlocks -m LockWaitsPersec -w 0 -c 0
@@ -254,25 +254,26 @@ class FileAge(Wmi):
 
         for file_dict in self.__file_list:
             self.filename = file_dict.get('Name')
-            self.logger.debug("===== start to compare {} =====".format(self.filename))
+            if self.filename and self.filename != 'Name':
+                self.logger.debug("===== start to compare {} =====".format(self.filename))
 
-            self.file_datetime_string = file_dict.get('LastModified').split('.')[0]
-            self.file_datetime = datetime.datetime.strptime(self.file_datetime_string, '%Y%m%d%H%M%S')
-            self.logger.debug("file_datetime: {}".format(self.file_datetime))
+                self.file_datetime_string = file_dict.get('LastModified').split('.')[0]
+                self.file_datetime = datetime.datetime.strptime(self.file_datetime_string, '%Y%m%d%H%M%S')
+                self.logger.debug("file_datetime: {}".format(self.file_datetime))
 
-            self.current_datetime = self.__get_current_datetime()
-            self.logger.debug("current_datetime: {}".format(self.current_datetime))
+                self.current_datetime = self.__get_current_datetime()
+                self.logger.debug("current_datetime: {}".format(self.current_datetime))
 
-            self.__delta_datetime = self.current_datetime - self.file_datetime
-            self.logger.debug("delta_datetime: {}".format(self.__delta_datetime))
-            self.logger.debug("warn_datetime: {}".format(datetime.timedelta(minutes=self.args.warning)))
-            self.logger.debug("crit_datetime: {}".format(datetime.timedelta(minutes=self.args.critical)))
-            if self.__delta_datetime > datetime.timedelta(minutes=self.args.critical):
-                self.crit_file.append(self.filename)
-            elif self.__delta_datetime > datetime.timedelta(minutes=self.args.warning):
-                self.warn_file.append(self.filename)
-            else:
-                self.ok_file.append(self.filename)
+                self.__delta_datetime = self.current_datetime - self.file_datetime
+                self.logger.debug("delta_datetime: {}".format(self.__delta_datetime))
+                self.logger.debug("warn_datetime: {}".format(datetime.timedelta(minutes=self.args.warning)))
+                self.logger.debug("crit_datetime: {}".format(datetime.timedelta(minutes=self.args.critical)))
+                if self.__delta_datetime > datetime.timedelta(minutes=self.args.critical):
+                    self.crit_file.append(self.filename)
+                elif self.__delta_datetime > datetime.timedelta(minutes=self.args.warning):
+                    self.warn_file.append(self.filename)
+                else:
+                    self.ok_file.append(self.filename)
 
         # Compare the vlaue.
         if self.crit_file:

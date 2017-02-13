@@ -10,7 +10,7 @@ Author: Canux CHENG canuxcheng@gmail.com
 Version: V1.0.0.0
 Time: Thu 28 Jul 2016 03:23:45 PM CST
 
-Description:
+DESCRIPTION:
     Test on nagios, naemon, icinga, shinken, centreon, opsview and sensu except check_mk.
     [1.0.0.0] 20160728 init for basic function.
 """
@@ -88,6 +88,13 @@ class Monitor(object):
     def define_sub_options(self):
         """Define options for monitoring plugins.
 
+        :param host: Monitoring Server IP address or Hostname.
+        :type host: string.
+        :param user: Monitoring Server User name.
+        :type user: string.
+        :param password: Monitoring Server User password.
+        :type password: string.
+
         Rewrite your method and define your suparsers.
         Use subparsers.add_parser to create sub options for one function.
         """
@@ -118,8 +125,12 @@ class Monitor(object):
     def output(self, substitute=None, long_output_limit=None):
         """Just for nagios output and tools based on nagios except check_mk.
 
-        Default longoutput show everything.
-        But you can use long_output_limit to limit the longoutput lines.
+        :param substitute: what you want to show in output.
+        :type substitute: dict.
+        :param long_output_limit: how many lines you want in output.
+        :type long_output_limit: int.
+        :return: return shortoutput + longoutput + perfdata.
+        :rtype: string.
         """
         if not substitute:
             substitute = {}
