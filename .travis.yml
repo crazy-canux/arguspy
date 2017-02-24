@@ -4,5 +4,9 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install coveralls
+script:
+  - cd pymonitoringplugins
+  - cd tests
+  - python test_ftp.py -h
 after_success:
   - coveralls
