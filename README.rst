@@ -106,10 +106,9 @@ Also you can pull request for your code.
 TODO
 -----
 
-* vmware monitoring
 * Compatible with Python3(2.0)
-* tivoli examples(1.7)
-* check_mk examples(1.6)
+* vSphere monitoring(1.7)
+* LDAP monitoring(1.6)
 * pymonitoringplugins/docs build with sphinx(1.5)
 * Thresholders need follow nagios rules(1.4)
 * snmp(1.3)
