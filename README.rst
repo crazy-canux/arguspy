@@ -4,6 +4,10 @@
 .. image:: https://img.shields.io/pypi/dm/pymonitoringplugins.svg
    :target: https://pypi.python.org/pypi/pymonitoringplugins/
 
+.. image:: https://travis-ci.org/crazy-canux/pymonitoringplugins.svg?branch=master
+   :target: https://travis-ci.org/crazy-canux/pymonitoringplugins
+
+
 ===================
 pymonitoringplugins
 ===================
