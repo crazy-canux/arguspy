@@ -7,6 +7,9 @@
 .. image:: https://travis-ci.org/crazy-canux/pymonitoringplugins.svg?branch=master
    :target: https://travis-ci.org/crazy-canux/pymonitoringplugins
 
+.. image:: https://coveralls.io/repos/github/crazy-canux/pymonitoringplugins/badge.svg?branch=master
+   :target: https://coveralls.io/github/crazy-canux/pymonitoringplugins?branch=master
+
 
 ===================
 pymonitoringplugins
