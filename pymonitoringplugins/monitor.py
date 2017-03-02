@@ -13,6 +13,7 @@ Time: Thu 28 Jul 2016 03:23:45 PM CST
 DESCRIPTION:
     Test on nagios, naemon, icinga, shinken, centreon, opsview and sensu except check_mk.
     [1.0.0.0] 20160728 init for basic function.
+    [1.3.0.0] 20170227 create functions for threshold.
 """
 import logging
 import argparse
@@ -26,11 +27,10 @@ class Monitor(object):
     All tools have the same output except check_mk.
 
         Services Status:
-        0 green  OK
-        1 yellow Warning
-        2 red    Critical
-        3 orange Unknown
-        * grey   Pending
+        0   OK
+        1   Warning
+        2   Critical
+        3   Unknown
 
         Nagios Output(just support 4kb data):
         shortoutput - $SERVICEOUTPUT$
@@ -48,6 +48,17 @@ class Monitor(object):
         Longoutput line1
         Longoutput line2 |
         'perfdata'=value[UOM];[warn];[crit];[min];[max]
+
+        Threshold:
+        warning  warn_min:warn_max
+        critical crit_min:crit_max
+        warn_min < warn_max <= crit_min < crit_max
+
+        10 == 0:10     => <0 or >10 alert
+        10: == 10:æ   => <10 alert
+        ~:10 == -æ:10 => >10 alert
+        10:20          => <10 or >20 alert
+        @10:20         => >=10 or <= 20 alert
     """
 
     def __init__(self):
@@ -149,6 +160,10 @@ class Monitor(object):
             self.nagios_output = self.nagios_output.rstrip("\n")
             self.nagios_output += " | \n{0}".format(" ".join(self.perfdata))
         return self.nagios_output.format(**substitute)
+
+    def threshold(self, warning, critical):
+        """."""
+        pass
 
     def ok(self, msg):
         raise MonitorOk(msg)

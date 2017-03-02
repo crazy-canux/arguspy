@@ -114,11 +114,9 @@ TODO
 -----
 
 * Compatible with Python3(2.0)
-* vSphere monitoring(1.7)
-* LDAP monitoring(1.6)
-* pymonitoringplugins/docs build with sphinx(1.5)
-* Thresholders need follow nagios rules(1.4)
-* snmp(1.3)
+* vSphere monitoring(1.6)
+* LDAP monitoring(1.5)
+* SNMP monitoring(1.4)
 
 =============
 Documentation
