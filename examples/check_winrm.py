@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from pymp.winrm_pywinrm import WinRM
+from pymonitoringplugins.winrm_pywinrm import WinRM
 
 
 class SqlserverLocks(WinRM):

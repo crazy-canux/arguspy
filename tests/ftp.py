@@ -20,7 +20,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('..'))
 
-from pymp.ftp_ftplib import Ftp
+from pymonitoringplugins.ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):

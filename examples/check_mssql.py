@@ -16,7 +16,7 @@ Description:
 import sys
 import re
 
-from pymp.mssql_pymssql import Mssql
+from pymonitoringplugins.mssql_pymssql import Mssql
 
 
 class Sql(Mssql):

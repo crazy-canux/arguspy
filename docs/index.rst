@@ -1,13 +1,13 @@
-.. pymp documentation master file, created by
+.. pymonitoringplugins documentation master file, created by
    sphinx-quickstart on Thu Nov  3 00:47:47 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 ==============================
-Welcome to pymp
+Welcome to pymonitoringplugins
 ==============================
 
-pymp is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
+pymonitoringplugins is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
 In this package you can use lots of protocols to get the monitoring data.
 
@@ -21,12 +21,12 @@ Install
 
 Use pip::
 
-    $pip install pymp
+    $pip install pymonitoringplugins
 
 Use source code::
 
-    $git clone https://github.com/crazy-canux/pymp.git
-    $cd pymp
+    $git clone https://github.com/crazy-canux/pymonitoringplugins.git
+    $cd pymonitoringplugins
     $python setup.py install
 
 ===========
@@ -35,14 +35,14 @@ Quick Start
 
 Import the protocol you want::
 
-    from pymp.http_requests import Http
-    from pymp.ftp_ftplib import Ftp
-    from pymp.ssh_paramiko import Ssh
-    from pymp.mssql_pymssql import Mssql
-    from pymp.mysql_pymysql import Mysql
-    from pymp.winrm_pywinrm import WinRM
-    from pymp.wmi_sh import Wmi
-    from pymp.wmi_subprocess import Wmi
+    from pymonitoringplugins.http_requests import Http
+    from pymonitoringplugins.ftp_ftplib import Ftp
+    from pymonitoringplugins.ssh_paramiko import Ssh
+    from pymonitoringplugins.mssql_pymssql import Mssql
+    from pymonitoringplugins.mysql_pymysql import Mysql
+    from pymonitoringplugins.winrm_pywinrm import WinRM
+    from pymonitoringplugins.wmi_sh import Wmi
+    from pymonitoringplugins.wmi_subprocess import Wmi
     ...
 
 Write your own business monitoring class::

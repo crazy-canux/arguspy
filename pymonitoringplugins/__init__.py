@@ -11,7 +11,7 @@ Version: V1.0.0.0
 Time: Fri 05 Aug 2016 02:41:19 PM CST
 
 Example:
-    from pymp.ftp_ftplib import Ftp
+    from pymonitoringplugins.ftp_ftplib import Ftp
 """
 
 __version__ = "1.3.0"

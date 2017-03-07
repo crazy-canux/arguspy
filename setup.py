@@ -17,11 +17,11 @@ import os
 
 from setuptools import setup, find_packages
 
-import pymp
+import pymonitoringplugins
 
-NAME = 'pymp'
-VERSION = pymp.__version__
-URL = 'https://github.com/crazy-canux/pymp'
+NAME = 'pymonitoringplugins'
+VERSION = pymonitoringplugins.__version__
+URL = 'https://github.com/crazy-canux/pymonitoringplugins'
 DESCRIPTION='Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
 KEYWORDS='monitoring nagios icinga plugins'
 

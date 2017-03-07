@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# pymp documentation build configuration file, created by
+# pymonitoringplugins documentation build configuration file, created by
 # sphinx-quickstart on Thu Nov  3 00:47:47 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -20,7 +20,7 @@ import os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
-from pymp import __version__
+from pymonitoringplugins import __version__
 
 # -- General configuration ------------------------------------------------
 
@@ -56,7 +56,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pymp'
+project = u'pymonitoringplugins'
 copyright = u'2016, <a href="http://canuxcheng.com">Canux CHENG</a>'
 author = u'Canux CHENG'
 
@@ -125,7 +125,7 @@ html_theme = 'alabaster'
 # documentation.
 html_theme_options = {
     'github_user': 'crazy-canux',
-    'github_repo': 'pymp',
+    'github_repo': 'pymonitoringplugins',
     'github_banner': True,
     'show_powered_by': False,
     'show_related': True,
@@ -225,7 +225,7 @@ html_search_language = 'en'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pympdoc'
+htmlhelp_basename = 'pymonitoringpluginsdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -247,7 +247,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'pymp.tex', u'pymp Documentation',
+  (master_doc, 'pymonitoringplugins.tex', u'pymonitoringplugins Documentation',
    u'Canux CHENG', 'manual'),
 ]
 
@@ -277,7 +277,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pymp', u'pymp Documentation',
+    (master_doc, 'pymonitoringplugins', u'pymonitoringplugins Documentation',
      [author], 1)
 ]
 
@@ -291,8 +291,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'pymp', u'pymp Documentation',
-   author, 'pymp', 'One line description of project.',
+  (master_doc, 'pymonitoringplugins', u'pymonitoringplugins Documentation',
+   author, 'pymonitoringplugins', 'One line description of project.',
    'Miscellaneous'),
 ]
 
