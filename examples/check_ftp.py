@@ -18,7 +18,7 @@ Description:
 """
 import sys
 
-from pymonitoringplugins.ftp_ftplib import Ftp
+from pymp.ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):

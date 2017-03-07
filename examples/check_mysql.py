@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from pymonitoringplugins.mysql_pymysql import Mysql
+from pymp.mysql_pymysql import Mysql
 
 
 class Sql(Mysql):

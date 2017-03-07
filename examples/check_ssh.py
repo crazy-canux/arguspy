@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from pymonitoringplugins.ssh_paramiko import Ssh
+from pymp.ssh_paramiko import Ssh
 
 
 class Command(Ssh):

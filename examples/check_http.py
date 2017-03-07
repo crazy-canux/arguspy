@@ -14,7 +14,7 @@ DESCRIPTION:
 """
 import sys
 
-from pymonitoringplugins.http_requests import Http
+from pymp.http_requests import Http
 
 
 class HttpSearch(Http):

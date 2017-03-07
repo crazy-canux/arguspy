@@ -161,9 +161,84 @@ class Monitor(object):
             self.nagios_output += " | \n{0}".format(" ".join(self.perfdata))
         return self.nagios_output.format(**substitute)
 
-    def threshold(self, warning, critical):
-        """."""
-        pass
+    def __parse_threshold(self, threshold):
+        """Get the min and max value from warning and critical threshold.
+
+        :param threshold: warning or critical threshold.
+        :type threshold: str.
+        :return (min, max): min and max value.
+        :rtype (min, max): tuple.
+        """
+        self.logger.debug("threshold: {}".format(threshold))
+        if "@" in threshold:
+            if ":" in threshold:
+                return threshold.split("@")[1].split(":")[0], threshold.split("@")[1].split(":")[1]
+            else:
+                return 0, threshold.split("@")[1]
+        else:
+            if ":" in threshold:
+                return threshold.split(":")[0], threshold.split(":")[1]
+            else:
+                return 0, threshold
+
+    def __compare_threshold(self, result, mode):
+        """Use the result compare with threshold.
+
+        :param result: the result.
+        :type result: int.
+        :param mode: warning or critical.
+        :type mode: str.
+        :return status: status.
+        :rtype status: function.
+        """
+        status = self.ok
+        if mode == "warn":
+            __min, __max = self.__parse_threshold(self.args.warning)
+            threshold = self.args.warning
+            status = self.warning
+        elif mode == "crit":
+            __min, __max = self.__parse_threshold(self.args.critical)
+            threshold = self.args.critical
+            status = self.critical
+        else:
+            self.unknown("Unknown threshold mode.")
+        if __min > __max:
+            self.unknown("Min must < Max in threshold.")
+
+        if "~" == __min:
+            if "@" in threshold:
+                if result <= __max:
+                    show = status
+            else:
+                if result > __max:
+                    show = status
+        elif not __max:
+            if "@" in threshold:
+                if result >= __min:
+                    show = status
+            else:
+                if result < __min:
+                    show = status
+        else:
+            if "@" in self.args.warning:
+                if __min <= result <= __max:
+                    show = status
+            else:
+                if result < __min or result > __max:
+                    show = status
+        return show
+
+    def threshold(self, result):
+        """Just for nagios, and tools based on nagios, except check_mk.
+
+        :param result: the result of the service.
+        :type result: int.
+        :return status: the status of this service.
+        :rtype status: method.
+        """
+        status = self.__compare_threshold(result, 'warn')
+        status = self.__compare_threshold(result, 'crit')
+        return status
 
     def ok(self, msg):
         raise MonitorOk(msg)

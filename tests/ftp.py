@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 from pymp.ftp_ftplib import Ftp
 
+
 class FileNumber(Ftp):
 
     """Count the file number in the ftp folder.
@@ -54,14 +55,12 @@ class FileNumber(Ftp):
                                     help='Recursive count file under path.',
                                     dest='recursive')
         self.fn_parser.add_argument('-w', '--warning',
-                                    default=0,
-                                    type=int,
+                                    default="0",
                                     required=False,
                                     help='Warning value for filenumber, default is %(default)s',
                                     dest='warning')
         self.fn_parser.add_argument('-c', '--critical',
-                                    default=0,
-                                    type=int,
+                                    default="0",
                                     required=False,
                                     help='Critical value for filenumber, default is %(default)s',
                                     dest='critical')
@@ -88,10 +87,7 @@ class FileNumber(Ftp):
         self.logger.debug("result: {}".format(self.__result))
 
         # Compare the vlaue.
-        if self.__result > self.args.warning:
-            status = self.warning
-        if self.__result > self.args.critical:
-            status = self.critical
+        status = self.threshold(self.__result)
 
         # Output
         self.shortoutput = "Found {0} files in {1}.".format(self.__result,

@@ -1,21 +1,21 @@
-.. image:: https://img.shields.io/pypi/v/pymonitoringplugins.svg
-   :target: https://pypi.python.org/pypi/pymonitoringplugins/
+.. image:: https://img.shields.io/pypi/v/pymp.svg
+   :target: https://pypi.python.org/pypi/pymp/
 
-.. image:: https://img.shields.io/pypi/dm/pymonitoringplugins.svg
-   :target: https://pypi.python.org/pypi/pymonitoringplugins/
+.. image:: https://img.shields.io/pypi/dm/pymp.svg
+   :target: https://pypi.python.org/pypi/pymp/
 
-.. image:: https://travis-ci.org/crazy-canux/pymonitoringplugins.svg?branch=master
-   :target: https://travis-ci.org/crazy-canux/pymonitoringplugins
+.. image:: https://travis-ci.org/crazy-canux/pymp.svg?branch=master
+   :target: https://travis-ci.org/crazy-canux/pymp
 
-.. image:: https://coveralls.io/repos/github/crazy-canux/pymonitoringplugins/badge.svg?branch=master
-   :target: https://coveralls.io/github/crazy-canux/pymonitoringplugins?branch=master
+.. image:: https://coveralls.io/repos/github/crazy-canux/pymp/badge.svg?branch=master
+   :target: https://coveralls.io/github/crazy-canux/pymp?branch=master
 
 
 ===================
-pymonitoringplugins
+pymp
 ===================
 
-pymonitoringplugins is pure python code.
+pymp is pure python code.
 
 It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
 
@@ -27,7 +27,7 @@ How to install
 
 Use pip to install::
 
-    pip install pymonitoringplugins
+    pip install pymp
 
 ----------
 How to use
@@ -35,14 +35,14 @@ How to use
 
 Just import what protocol you need::
 
-    from pymonitoringplugins.ftp_ftplib import Ftp
-    from pymonitoringplugins.http_requests import Http
-    from pymonitoringplugins.mssql_pymssql import Mssql
-    from pymonitoringplugins.mysql_pymysql import Mysql
-    from pymonitoringplugins.ssh_paramiko import Ssh
-    from pymonitoringplugins.winrm_pywinrm import WinRM
-    from pymonitoringplugins.wmi_sh import Wmi
-    from pymonitoringplugins.wmi_subprocess import Wmi
+    from pymp.ftp_ftplib import Ftp
+    from pymp.http_requests import Http
+    from pymp.mssql_pymssql import Mssql
+    from pymp.mysql_pymysql import Mysql
+    from pymp.ssh_paramiko import Ssh
+    from pymp.winrm_pywinrm import WinRM
+    from pymp.wmi_sh import Wmi
+    from pymp.wmi_subprocess import Wmi
 
 Then write your own function monitoring class::
 
@@ -113,31 +113,31 @@ Also you can pull request for your code.
 TODO
 -----
 
-* Compatible with Python3(2.0)
-* vSphere monitoring(1.6)
-* LDAP monitoring(1.5)
-* SNMP monitoring(1.4)
+* Compatible with Python3(2.0.0)
+* vSphere monitoring(1.6.0)
+* LDAP monitoring(1.5.0)
+* SNMP monitoring(1.4.0)
 
 =============
 Documentation
 =============
 
-`[Documentation] <http://pymonitoringplugins.readthedocs.io/en/latest/>`_
+`[Documentation] <http://pymp.readthedocs.io/en/latest/>`_
 
 ============
 Contribution
 ============
 
-`[Contribution] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/CONTRIBUTING.rst>`_
+`[Contribution] <https://github.com/crazy-canux/pymp/blob/master/CONTRIBUTING.rst>`_
 
 =======
 Authors
 =======
 
-`[Authors] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/AUTHORS.rst>`_
+`[Authors] <https://github.com/crazy-canux/pymp/blob/master/AUTHORS.rst>`_
 
 =======
 License
 =======
 
-`[License] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/LICENSE>`_
+`[License] <https://github.com/crazy-canux/pymp/blob/master/LICENSE>`_
