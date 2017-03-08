@@ -3,6 +3,7 @@ python:
   - 2.7
 
 install:
+  - sudo apt-get install freetds*
   - pip install -r requirements.txt
   - pip install coveralls
 
