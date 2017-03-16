@@ -113,6 +113,8 @@ Also you can pull request for your code.
 TODO
 -----
 
+* Distribute 1.3.0 to pypi.
+* Write unit test in tests/
 * Compatible with Python3(2.0.0)
 * vSphere monitoring(1.6.0)
 * LDAP monitoring(1.5.0)

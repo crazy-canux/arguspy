@@ -22,8 +22,8 @@ import pymonitoringplugins
 NAME = 'pymonitoringplugins'
 VERSION = pymonitoringplugins.__version__
 URL = 'https://github.com/crazy-canux/pymonitoringplugins'
-DESCRIPTION='Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
-KEYWORDS='monitoring nagios icinga plugins'
+DESCRIPTION = 'Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
+KEYWORDS = 'monitoring nagios icinga plugins'
 
 
 def read(readme):
@@ -36,17 +36,7 @@ def read(readme):
         import pypandoc
         return pypandoc.convert(readme, 'rst')
 
-INSTALL_REQUIRES = [
-    'pymysql',
-    'pymssql',
-    'paramiko',
-    'pywinrm',
-    'pysnmp',
-    'pyvmomi',
-    'sh',
-    'requests',
-    'bs4'
-]
+INSTALL_REQUIRES = []
 
 setup(
     name=NAME,
