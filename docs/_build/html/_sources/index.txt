@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-==============================
-Welcome to pymonitoringplugins
-==============================
+===================
+pymonitoringplugins
+===================
 
 pymonitoringplugins is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
@@ -13,7 +13,7 @@ In this package you can use lots of protocols to get the monitoring data.
 
 All you need to do is just focus on your monitoring business.
 
-You don't need to pay attention on the basic protocols connection.
+You don't need to pay attention on basic protocols connection and the basic functions about the monitoring tools.
 
 =======
 Install
@@ -43,6 +43,7 @@ Import the protocol you want::
     from pymonitoringplugins.winrm_pywinrm import WinRM
     from pymonitoringplugins.wmi_sh import Wmi
     from pymonitoringplugins.wmi_subprocess import Wmi
+    ...
 
 Write your own business monitoring class::
 
@@ -106,6 +107,27 @@ Define main function::
 
     if __name__ == "__main__":
         main()
+
+==========
+How to use
+==========
+
+If you want to use this library and the plugins.
+
+You must know something about the monitoring tools and protocols.
+
+Output:
+
+- $SERVICEOUTPUT$ -> ShortOutput
+- $SERVICEPERFDATA$ -> PerfData
+- $LONGSERVICEOUTPUT$ -> LongOutput
+
+Return code:
+
+- 0 OK
+- 1 Warning
+- 2 Critical
+- 3 Unknown
 
 ==============
 The User Guide
