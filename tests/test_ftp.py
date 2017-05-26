@@ -17,7 +17,10 @@ Description:
         ./check_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
 """
 
-from ..pymonitoringplugins.ftp_ftplib import Ftp
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+from pymonitoringplugins.ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):
