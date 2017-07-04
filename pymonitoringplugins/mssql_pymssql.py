@@ -14,7 +14,6 @@ Description:
     [1.0.0.0] 20160727 Init this plugin for basic functions.
 """
 import pymssql
-import sys
 
 from monitor import Monitor
 
