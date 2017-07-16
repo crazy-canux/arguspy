@@ -16,7 +16,7 @@ Description:
 import sys
 import re
 
-from hydra.mssql_pymssql import Mssql
+from arguspy.mssql_pymssql import Mssql
 
 
 class Sql(Mssql):

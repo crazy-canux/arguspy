@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from hydra.ssh_paramiko import Ssh
+from arguspy.ssh_paramiko import Ssh
 
 
 class Command(Ssh):

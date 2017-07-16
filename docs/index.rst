@@ -1,13 +1,13 @@
-.. hydra documentation master file, created by
+.. arguspy documentation master file, created by
    sphinx-quickstart on Thu Nov  3 00:47:47 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 ===================
-hydra
+arguspy
 ===================
 
-hydra is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
+arguspy is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
 In this package you can use lots of protocols to get the monitoring data.
 
@@ -21,12 +21,12 @@ Install
 
 Use pip::
 
-    $pip install hydra
+    $pip install arguspy
 
 Use source code::
 
-    $git clone https://github.com/crazy-canux/hydra.git
-    $cd hydra
+    $git clone https://github.com/crazy-canux/arguspy.git
+    $cd arguspy
     $python setup.py install
 
 ===========
@@ -35,14 +35,14 @@ Quick Start
 
 Import the protocol you want::
 
-    from hydra.http_requests import Http
-    from hydra.ftp_ftplib import Ftp
-    from hydra.ssh_paramiko import Ssh
-    from hydra.mssql_pymssql import Mssql
-    from hydra.mysql_pymysql import Mysql
-    from hydra.winrm_pywinrm import WinRM
-    from hydra.wmi_sh import Wmi
-    from hydra.wmi_subprocess import Wmi
+    from arguspy.http_requests import Http
+    from arguspy.ftp_ftplib import Ftp
+    from arguspy.ssh_paramiko import Ssh
+    from arguspy.mssql_pymssql import Mssql
+    from arguspy.mysql_pymysql import Mysql
+    from arguspy.winrm_pywinrm import WinRM
+    from arguspy.wmi_sh import Wmi
+    from arguspy.wmi_subprocess import Wmi
     ...
 
 Write your own business monitoring class::

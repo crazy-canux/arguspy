@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from hydra.winrm_pywinrm import WinRM
+from arguspy.winrm_pywinrm import WinRM
 
 
 class SqlserverLocks(WinRM):

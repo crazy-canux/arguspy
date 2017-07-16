@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 import unittest
 
-from hydra.ftp_ftplib import Ftp
+from arguspy.ftp_ftplib import Ftp
 
 class TestFtp(unittest.TestCase):
     @classmethod

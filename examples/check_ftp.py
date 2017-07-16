@@ -18,7 +18,7 @@ Description:
 """
 import sys
 
-from hydra.ftp_ftplib import Ftp
+from arguspy.ftp_ftplib import Ftp
 
 
 class FileNumber(Ftp):

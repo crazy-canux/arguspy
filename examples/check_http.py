@@ -15,7 +15,7 @@ DESCRIPTION:
 """
 import sys
 
-from hydra.http_requests import Http
+from arguspy.http_requests import Http
 
 
 class HttpSearch(Http):

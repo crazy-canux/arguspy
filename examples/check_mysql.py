@@ -15,7 +15,7 @@ Description:
 """
 import sys
 
-from hydra.mysql_pymysql import Mysql
+from arguspy.mysql_pymysql import Mysql
 
 
 class Sql(Mysql):

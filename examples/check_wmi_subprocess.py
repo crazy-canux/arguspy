@@ -16,7 +16,7 @@ Description:
 import sys
 import datetime
 
-from hydra.wmi_subprocess import Wmi
+from arguspy.wmi_subprocess import Wmi
 
 
 class FileNumber(Wmi):

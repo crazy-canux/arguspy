@@ -1,21 +1,21 @@
-.. image:: https://img.shields.io/pypi/v/hydra.svg
-   :target: https://pypi.python.org/pypi/hydra/
+.. image:: https://img.shields.io/pypi/v/arguspy.svg
+   :target: https://pypi.python.org/pypi/arguspy/
 
-.. image:: https://img.shields.io/pypi/dm/hydra.svg
-   :target: https://pypi.python.org/pypi/hydra/
+.. image:: https://img.shields.io/pypi/dm/arguspy.svg
+   :target: https://pypi.python.org/pypi/arguspy/
 
-.. image:: https://travis-ci.org/crazy-canux/hydra.svg?branch=master
-   :target: https://travis-ci.org/crazy-canux/hydra
+.. image:: https://travis-ci.org/crazy-canux/arguspy.svg?branch=master
+   :target: https://travis-ci.org/crazy-canux/arguspy
 
-.. image:: https://coveralls.io/repos/github/crazy-canux/hydra/badge.svg?branch=master
-   :target: https://coveralls.io/github/crazy-canux/hydra?branch=master
+.. image:: https://coveralls.io/repos/github/crazy-canux/arguspy/badge.svg?branch=master
+   :target: https://coveralls.io/github/crazy-canux/arguspy?branch=master
 
 
-=====
-hydra
-=====
+=======
+arguspy
+=======
 
-hydra is pure python code.
+arguspy is pure python code.
 
 It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
 
@@ -27,7 +27,7 @@ How to install
 
 Use pip to install::
 
-    $ pip install hydra
+    $ pip install arguspy
 
 ----------
 How to use
@@ -35,14 +35,14 @@ How to use
 
 Just import what protocol you need::
 
-    from hydra.ftp_ftplib import Ftp
-    from hydra.http_requests import Http
-    from hydra.mssql_pymssql import Mssql
-    from hydra.mysql_pymysql import Mysql
-    from hydra.ssh_paramiko import Ssh
-    from hydra.winrm_pywinrm import WinRM
-    from hydra.wmi_sh import Wmi
-    from hydra.wmi_subprocess import Wmi
+    from arguspy.ftp_ftplib import Ftp
+    from arguspy.http_requests import Http
+    from arguspy.mssql_pymssql import Mssql
+    from arguspy.mysql_pymysql import Mysql
+    from arguspy.ssh_paramiko import Ssh
+    from arguspy.winrm_pywinrm import WinRM
+    from arguspy.wmi_sh import Wmi
+    from arguspy.wmi_subprocess import Wmi
 
 Then write your own function monitoring class::
 
@@ -114,33 +114,26 @@ TODO
 -----
 
 * Write unit test in tests/
-
 * Compatible with Python3(2.0.0)
 * vSphere monitoring(1.6.0)
 * LDAP monitoring(1.5.0)
 * SNMP monitoring(1.4.0)
-* threshold(1.3.0)
-
-=============
-Documentation
-=============
-
-`[Documentation] <http://hydra.readthedocs.io/en/latest/>`_
+* Threshold(1.3.0)
 
 ============
 Contribution
 ============
 
-`[Contribution] <https://github.com/crazy-canux/hydra/blob/master/CONTRIBUTING.rst>`_
+`[Contribution] <https://github.com/crazy-canux/arguspy/blob/master/CONTRIBUTING.rst>`_
 
 =======
 Authors
 =======
 
-`[Authors] <https://github.com/crazy-canux/hydra/blob/master/AUTHORS.rst>`_
+`[Authors] <https://github.com/crazy-canux/arguspy/blob/master/AUTHORS.rst>`_
 
 =======
 License
 =======
 
-`[License] <https://github.com/crazy-canux/hydra/blob/master/LICENSE>`_
+`[License] <https://github.com/crazy-canux/arguspy/blob/master/LICENSE>`_

@@ -17,11 +17,11 @@ import os
 
 from setuptools import setup, find_packages
 
-import hydra
+import arguspy
 
-NAME = 'hydra'
-VERSION = hydra.__version__
-URL = 'https://github.com/crazy-canux/hydra'
+NAME = 'arguspy'
+VERSION = arguspy.__version__
+URL = 'https://github.com/crazy-canux/arguspy'
 DESCRIPTION = 'Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
 KEYWORDS = 'monitoring nagios icinga plugins'
 
