@@ -7,10 +7,11 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: http_requests.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Tue 13 Sep 2016 02:12:28 AM EDT
 
-DETAILS:
+DESCRIPTION:
+    [1.2.0] 20170328 init for basic function.
 """
 import requests
 

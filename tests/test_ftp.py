@@ -3,11 +3,11 @@
 """
 Ftp plugins build with this library.
 
-Copyright (C) 2016 Canux CHENG.
+Copyright (C) 2017 Canux CHENG.
 All rights reserved.
 Name: check_ftp.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Thu 28 Jul 2016 03:23:45 PM CST
 
 Description:
@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 import unittest
 
-from pymonitoringplugins.ftp_ftplib import Ftp
+from hydra.ftp_ftplib import Ftp
 
 class TestFtp(unittest.TestCase):
     @classmethod

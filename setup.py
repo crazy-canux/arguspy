@@ -7,7 +7,7 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: setup.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Fri 05 Aug 2016 09:59:29 AM CST
 
 Description:
@@ -17,11 +17,11 @@ import os
 
 from setuptools import setup, find_packages
 
-import pymonitoringplugins
+import hydra
 
-NAME = 'pymonitoringplugins'
-VERSION = pymonitoringplugins.__version__
-URL = 'https://github.com/crazy-canux/pymonitoringplugins'
+NAME = 'hydra'
+VERSION = hydra.__version__
+URL = 'https://github.com/crazy-canux/hydra'
 DESCRIPTION = 'Common interface of tons protocals, used for monitoring tools, like nagios/icinga...'
 KEYWORDS = 'monitoring nagios icinga plugins'
 

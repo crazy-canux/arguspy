@@ -7,7 +7,7 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: winrm_pywinrm.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Thur 01 Aug 2016 04:43:40 PM CST
 
 WinRM: Windows Remote Management.
@@ -17,7 +17,7 @@ firewall-friendly protocol that allows hardware and operating systems,
 from different vendors, to interoperate.
 
 Description:
-    [1.0.0.0] 20160728 init for basic function.
+    [1.0.0] 20160728 init for basic function.
 """
 import winrm
 

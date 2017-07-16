@@ -7,11 +7,11 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: __init__.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Fri 05 Aug 2016 02:41:19 PM CST
 
 Example:
-    from pymonitoringplugins.ftp_ftplib import Ftp
+    from hydra.ftp_ftplib import Ftp
 """
 
 __version__ = "1.3.0"

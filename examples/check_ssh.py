@@ -7,15 +7,15 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: check_ssh.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Thu 28 Jul 2016 04:44:53 PM CST
 
 Description:
-    [1.0.0.0] 20160728 init for basic function.
+    [1.0.0] 20160728 init for basic function.
 """
 import sys
 
-from pymonitoringplugins.ssh_paramiko import Ssh
+from hydra.ssh_paramiko import Ssh
 
 
 class Command(Ssh):

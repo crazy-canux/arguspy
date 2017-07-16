@@ -7,14 +7,15 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: test_http.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Tue 08 Nov 2016 09:34:45 PM EST
 
 DESCRIPTION:
+    [1.2.0] 20170328 init for basic function.
 """
 import sys
 
-from pymonitoringplugins.http_requests import Http
+from hydra.http_requests import Http
 
 
 class HttpSearch(Http):

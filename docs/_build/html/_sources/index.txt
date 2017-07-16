@@ -1,13 +1,13 @@
-.. pymonitoringplugins documentation master file, created by
+.. hydra documentation master file, created by
    sphinx-quickstart on Thu Nov  3 00:47:47 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 ===================
-pymonitoringplugins
+hydra
 ===================
 
-pymonitoringplugins is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
+hydra is a pure python package for `[monitoring-plugins] <https://github.com/crazy-canux/awesome-monitoring>`_.
 
 In this package you can use lots of protocols to get the monitoring data.
 
@@ -21,12 +21,12 @@ Install
 
 Use pip::
 
-    $pip install pymonitoringplugins
+    $pip install hydra
 
 Use source code::
 
-    $git clone https://github.com/crazy-canux/pymonitoringplugins.git
-    $cd pymonitoringplugins
+    $git clone https://github.com/crazy-canux/hydra.git
+    $cd hydra
     $python setup.py install
 
 ===========
@@ -35,14 +35,14 @@ Quick Start
 
 Import the protocol you want::
 
-    from pymonitoringplugins.http_requests import Http
-    from pymonitoringplugins.ftp_ftplib import Ftp
-    from pymonitoringplugins.ssh_paramiko import Ssh
-    from pymonitoringplugins.mssql_pymssql import Mssql
-    from pymonitoringplugins.mysql_pymysql import Mysql
-    from pymonitoringplugins.winrm_pywinrm import WinRM
-    from pymonitoringplugins.wmi_sh import Wmi
-    from pymonitoringplugins.wmi_subprocess import Wmi
+    from hydra.http_requests import Http
+    from hydra.ftp_ftplib import Ftp
+    from hydra.ssh_paramiko import Ssh
+    from hydra.mssql_pymssql import Mssql
+    from hydra.mysql_pymysql import Mysql
+    from hydra.winrm_pywinrm import WinRM
+    from hydra.wmi_sh import Wmi
+    from hydra.wmi_subprocess import Wmi
     ...
 
 Write your own business monitoring class::

@@ -9,7 +9,7 @@ All rights reserved.
 LICENSE GNU General Public License v3.0.
 
 :author: Canux CHENG canuxcheng@gmail.com
-:version: V1.0.0.0
+:version: V1.0.0
 :since: Wed 24 May 2017 12:46:39 AM EDT
 
 DESCRIPTION:

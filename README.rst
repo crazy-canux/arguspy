@@ -1,21 +1,21 @@
-.. image:: https://img.shields.io/pypi/v/pymonitoringplugins.svg
-   :target: https://pypi.python.org/pypi/pymonitoringplugins/
+.. image:: https://img.shields.io/pypi/v/hydra.svg
+   :target: https://pypi.python.org/pypi/hydra/
 
-.. image:: https://img.shields.io/pypi/dm/pymonitoringplugins.svg
-   :target: https://pypi.python.org/pypi/pymonitoringplugins/
+.. image:: https://img.shields.io/pypi/dm/hydra.svg
+   :target: https://pypi.python.org/pypi/hydra/
 
-.. image:: https://travis-ci.org/crazy-canux/pymonitoringplugins.svg?branch=master
-   :target: https://travis-ci.org/crazy-canux/pymonitoringplugins
+.. image:: https://travis-ci.org/crazy-canux/hydra.svg?branch=master
+   :target: https://travis-ci.org/crazy-canux/hydra
 
-.. image:: https://coveralls.io/repos/github/crazy-canux/pymonitoringplugins/badge.svg?branch=master
-   :target: https://coveralls.io/github/crazy-canux/pymonitoringplugins?branch=master
+.. image:: https://coveralls.io/repos/github/crazy-canux/hydra/badge.svg?branch=master
+   :target: https://coveralls.io/github/crazy-canux/hydra?branch=master
 
 
-===================
-pymonitoringplugins
-===================
+=====
+hydra
+=====
 
-pymonitoringplugins is pure python code.
+hydra is pure python code.
 
 It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
 
@@ -27,7 +27,7 @@ How to install
 
 Use pip to install::
 
-    pip install pymonitoringplugins
+    $ pip install hydra
 
 ----------
 How to use
@@ -35,14 +35,14 @@ How to use
 
 Just import what protocol you need::
 
-    from pymonitoringplugins.ftp_ftplib import Ftp
-    from pymonitoringplugins.http_requests import Http
-    from pymonitoringplugins.mssql_pymssql import Mssql
-    from pymonitoringplugins.mysql_pymysql import Mysql
-    from pymonitoringplugins.ssh_paramiko import Ssh
-    from pymonitoringplugins.winrm_pywinrm import WinRM
-    from pymonitoringplugins.wmi_sh import Wmi
-    from pymonitoringplugins.wmi_subprocess import Wmi
+    from hydra.ftp_ftplib import Ftp
+    from hydra.http_requests import Http
+    from hydra.mssql_pymssql import Mssql
+    from hydra.mysql_pymysql import Mysql
+    from hydra.ssh_paramiko import Ssh
+    from hydra.winrm_pywinrm import WinRM
+    from hydra.wmi_sh import Wmi
+    from hydra.wmi_subprocess import Wmi
 
 Then write your own function monitoring class::
 
@@ -125,22 +125,22 @@ TODO
 Documentation
 =============
 
-`[Documentation] <http://pymonitoringplugins.readthedocs.io/en/latest/>`_
+`[Documentation] <http://hydra.readthedocs.io/en/latest/>`_
 
 ============
 Contribution
 ============
 
-`[Contribution] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/CONTRIBUTING.rst>`_
+`[Contribution] <https://github.com/crazy-canux/hydra/blob/master/CONTRIBUTING.rst>`_
 
 =======
 Authors
 =======
 
-`[Authors] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/AUTHORS.rst>`_
+`[Authors] <https://github.com/crazy-canux/hydra/blob/master/AUTHORS.rst>`_
 
 =======
 License
 =======
 
-`[License] <https://github.com/crazy-canux/pymonitoringplugins/blob/master/LICENSE>`_
+`[License] <https://github.com/crazy-canux/hydra/blob/master/LICENSE>`_

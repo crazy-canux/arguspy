@@ -7,11 +7,11 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: mssql_pymssql.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Wed 27 Jul 2016 02:01:20 PM CST
 
 Description:
-    [1.0.0.0] 20160727 Init this plugin for basic functions.
+    [1.0.0] 20160727 Init this plugin for basic functions.
 """
 import pymssql
 

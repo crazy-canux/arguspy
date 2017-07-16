@@ -7,13 +7,13 @@ Copyright (C) 2016 Canux CHENG.
 All rights reserved.
 Name: monitor.py
 Author: Canux CHENG canuxcheng@gmail.com
-Version: V1.0.0.0
+Version: V1.0.0
 Time: Thu 28 Jul 2016 03:23:45 PM CST
 
 DESCRIPTION:
     Test on nagios, naemon, icinga, shinken, centreon, opsview and sensu except check_mk.
-    [1.0.0.0] 20160728 init for basic function.
-    [1.3.0.0] 20170227 create functions for threshold.
+    [1.0.0] 20160728 init for basic function.
+    [1.3.0] 20170227 create functions for threshold.
 """
 import logging
 import argparse
