@@ -15,7 +15,10 @@
 arguspy
 =======
 
-arguspy is pure python code.
+.. figure:: https://github.com/crazy-canux/arguspy/blob/master/data/images/argus.jpg
+   :alt: pic1
+
+Arguspy is pure python code.
 
 It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
 
