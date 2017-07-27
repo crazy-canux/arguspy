@@ -117,8 +117,9 @@ class Register(FileNumber):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'filenumber' in arguments:
+    # arguments = sys.argv[1:]
+    # if 'filenumber' in arguments:
+    if plugin.args.cmdopt == 'filenumber':
         plugin.filenumber_handle()
     else:
         plugin.unknown("Unknown actions.")
