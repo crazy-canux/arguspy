@@ -56,6 +56,7 @@ class Wmi(Monitor):
                                                          "options for WMI connect.")
         self.subparsers = self.parser.add_subparsers(title="WMI Action",
                                                      description="Action mode for WMI.",
+                                                     dest="option",
                                                      help="Specify your action for WMI.")
         self.wmi_parser.add_argument('-d', '--domain',
                                      required=False,

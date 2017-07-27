@@ -13,8 +13,6 @@ Time: Tue 08 Nov 2016 09:34:45 PM EST
 DESCRIPTION:
     [1.2.0] 20170328 init for basic function.
 """
-import sys
-
 from arguspy.http_requests import Http
 
 
@@ -66,8 +64,7 @@ class Register(HttpSearch):
 
 def test_http():
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'httpsearch' in arguments:
+    if plugin.args.option == 'httpsearch':
         plugin.httpsearch_handle()
     else:
         plugin.unknown("Unknown actions.")

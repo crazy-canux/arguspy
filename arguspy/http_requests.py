@@ -72,6 +72,7 @@ class Http(Monitor):
                                                           "options for http/https")
         self.subparsers = self.parser.add_subparsers(title="Http/Https actions",
                                                      description="Action mode for http/https",
+                                                     dest='option',
                                                      help="Specify your action for http/https.")
         self.http_parser.add_argument('-S', '--ssl',
                                       action='store_true',

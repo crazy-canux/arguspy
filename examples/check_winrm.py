@@ -13,8 +13,6 @@ Time: Thur 01 Aug 2016 04:43:40 PM CST
 Description:
     [1.0.0] 20160728 init for basic function.
 """
-import sys
-
 from arguspy.winrm_pywinrm import WinRM
 
 
@@ -117,8 +115,7 @@ class Register(SqlserverLocks):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'sqlserverlocks' in arguments:
+    if plugin.args.option == 'sqlserverlocks':
         plugin.sqlserverlocks_handle()
     else:
         plugin.unknown("Unknown actions.")

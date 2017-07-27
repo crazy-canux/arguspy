@@ -75,6 +75,7 @@ class Mysql(Monitor):
         self.mysql_parser = self.parser.add_argument_group("Mysql Options",
                                                            "options for mysql connect.")
         self.subparsers = self.parser.add_subparsers(title="Mysql Actions",
+                                                     dest='option',
                                                      description="Action mode for mysql.",
                                                      help="Speficy you action for mysql.")
         self.mysql_parser.add_argument('-d', '--database',

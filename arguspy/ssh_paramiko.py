@@ -94,6 +94,7 @@ class Ssh(Monitor):
                                                          "options for SSH connect.")
         self.subparsers = self.parser.add_subparsers(title="SSH Actions",
                                                      description="Action mode for SSH.",
+                                                     dest="option",
                                                      help="Specify your action for SSH.")
         self.ssh_parser.add_argument('-P', '--port',
                                      default='22',

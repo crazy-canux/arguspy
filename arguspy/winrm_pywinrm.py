@@ -77,6 +77,7 @@ class WinRM(Monitor):
                                                          "options for winrm connect.")
         self.subparsers = self.parser.add_subparsers(title="WinRM Action",
                                                      description="Action mode for WinRM.",
+                                                     dest="option",
                                                      help="Specify your action for WinRM.")
         self.wrm_parser.add_argument('-d', '--domain',
                                      required=False,

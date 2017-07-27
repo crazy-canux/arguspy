@@ -56,6 +56,7 @@ class Ftp(Monitor):
                                                          "options for ftp connect.")
         self.subparsers = self.parser.add_subparsers(title="Ftp Actions",
                                                      description="Action mode for ftp.",
+                                                     dest='option',
                                                      help="Specify your action for ftp.")
         self.ftp_parser.add_argument('-P', '--port',
                                      default=21,

@@ -13,7 +13,6 @@ Time: Wed 27 Jul 2016 02:01:20 PM CST
 Description:
     [1.0.0] 20160727 Init this plugin for basic functions.
 """
-import sys
 import re
 
 from arguspy.mssql_pymssql import Mssql
@@ -39,18 +38,22 @@ class Sql(Mssql):
                                      required=True,
                                      help='The sql or store procedure.',
                                      dest='sql')
-        self.sql_parser.add_argument('-w', '--warning',
-                                     default=0,
-                                     type=int,
-                                     required=False,
-                                     help='Warning value for sql, default is %(default)s',
-                                     dest='warning')
-        self.sql_parser.add_argument('-c', '--critical',
-                                     default=0,
-                                     type=int,
-                                     required=False,
-                                     help='Critical value for sql, default is %(default)s',
-                                     dest='critical')
+        self.sql_parser.add_argument(
+            '-w',
+            '--warning',
+            default=0,
+            type=int,
+            required=False,
+            help='Warning value for sql, default is %(default)s',
+            dest='warning')
+        self.sql_parser.add_argument(
+            '-c',
+            '--critical',
+            default=0,
+            type=int,
+            required=False,
+            help='Critical value for sql, default is %(default)s',
+            dest='critical')
         self.sql_parser.add_argument('--as_dict',
                                      default=False,
                                      type=bool,
@@ -109,18 +112,22 @@ class DatabaseUsed(Mssql):
                                                     database-used.',
                                                     description='Options\
                                                     for database-used.')
-        self.du_parser.add_argument('-w', '--warning',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Warning value for data file, default is %(default)s',
-                                    dest='warning')
-        self.du_parser.add_argument('-c', '--critical',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Critical value for data file, default is %(default)s',
-                                    dest='critical')
+        self.du_parser.add_argument(
+            '-w',
+            '--warning',
+            default=0,
+            type=int,
+            required=False,
+            help='Warning value for data file, default is %(default)s',
+            dest='warning')
+        self.du_parser.add_argument(
+            '-c',
+            '--critical',
+            default=0,
+            type=int,
+            required=False,
+            help='Critical value for data file, default is %(default)s',
+            dest='critical')
         self.du_parser.add_argument('-r', '--regex',
                                     required=False,
                                     help='Specify the DB you want.',
@@ -288,18 +295,22 @@ class DatabaseLogUsed(Mssql):
                                                     databaselog-used.',
                                                     description='Options\
                                                     for databaselog-used.')
-        self.dl_parser.add_argument('-w', '--warning',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Warning value for log file, default is %(default)s',
-                                    dest='warning')
-        self.dl_parser.add_argument('-c', '--critical',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Critical value for log file, default is %(default)s',
-                                    dest='critical')
+        self.dl_parser.add_argument(
+            '-w',
+            '--warning',
+            default=0,
+            type=int,
+            required=False,
+            help='Warning value for log file, default is %(default)s',
+            dest='warning')
+        self.dl_parser.add_argument(
+            '-c',
+            '--critical',
+            default=0,
+            type=int,
+            required=False,
+            help='Critical value for log file, default is %(default)s',
+            dest='critical')
         self.dl_parser.add_argument('-r', '--regex',
                                     required=False,
                                     help='Specify the DB you want.',
@@ -464,12 +475,11 @@ class Register(Sql, DatabaseUsed, DatabaseLogUsed):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'sql' in arguments:
+    if plugin.args.option == 'sql':
         plugin.sql_handle()
-    elif 'database-used' in arguments:
+    elif plugin.args.option == 'database-used':
         plugin.database_used_handle()
-    elif 'databaselog-used' in arguments:
+    elif plugin.args.option == 'databaselog-used':
         plugin.database_log_used_handle()
     else:
         plugin.unknown("Unknown actions.")

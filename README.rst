@@ -90,14 +90,11 @@ If you put more than one function monitoring class in one file(Not recommend)::
 Last step::
 
     def main():
-        # For multiple inherit
-        # plugin = Register()
-        plugin = YourClass()
-        arguments = sys.argv[1:]
-        if 'your' in arguments:
-            plugin.your_handle()
-        elif 'your2' in arguments:
-            plugin.your2_handle()
+        plugin = Register()
+        if plugin.args.option == 'action':
+            plugin.action_handle()
+        elif ...:
+            ...
         else:
             plugin.unknown("Unknown actions.")
 
@@ -116,11 +113,16 @@ Also you can pull request for your code.
 TODO
 -----
 
-* Write unit test in tests/
+* Write unit tests in tests/
+* Write docs in docs/
+* Write examples in examples/
 * Compatible with Python3(2.0.0)
 * vSphere monitoring(1.6.0)
 * LDAP monitoring(1.5.0)
 * SNMP monitoring(1.4.0)
+* Fix all pylint errors(1.3.3)
+* Implement threshold(1.3.2)
+* Refactor argparse(1.3.1)
 * Threshold(1.3.0)
 
 ============

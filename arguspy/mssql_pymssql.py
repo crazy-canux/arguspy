@@ -77,6 +77,7 @@ class Mssql(Monitor):
                                                            "options for mssql connect.")
         self.subparsers = self.parser.add_subparsers(title="Mssql Actions",
                                                      description="Action mode for mssql.",
+                                                     dest='option',
                                                      help="Specify your action for mssql.")
         self.mssql_parser.add_argument('-d', '--database',
                                        default='master',

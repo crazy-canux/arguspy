@@ -13,8 +13,6 @@ Time: Wed 27 Jul 2016 02:32:05 PM CST
 Description:
     [1.0.0] 20160727 Init this plugin for basic functions.
 """
-import sys
-
 from arguspy.mysql_pymysql import Mysql
 
 
@@ -98,8 +96,7 @@ class Register(Sql):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'sql' in arguments:
+    if plugin.args.option == 'sql':
         plugin.sql_handle()
     else:
         plugin.unknown("Unknown actions.")

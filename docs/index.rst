@@ -96,11 +96,8 @@ If put more than one business monitoring class in one plugin::
 Define main function::
 
     def main():
-        # If just one class
-        # plugin = HttpSearch()
         plugin = Register()
-        arguments = sys.argv[1:]
-        if 'httpsearch' in arguments:
+        if plugin.args.option == 'httpsearch':
             plugin.httpsearch_handle()
         else:
             plugin.unknown("Unknown Action.")
@@ -116,18 +113,18 @@ If you want to use this library and the plugins.
 
 You must know something about the monitoring tools and protocols.
 
-Output:
+Output::
 
-- $SERVICEOUTPUT$ -> ShortOutput
-- $SERVICEPERFDATA$ -> PerfData
-- $LONGSERVICEOUTPUT$ -> LongOutput
+    - $SERVICEOUTPUT$ -> ShortOutput
+    - $SERVICEPERFDATA$ -> PerfData
+    - $LONGSERVICEOUTPUT$ -> LongOutput
 
-Return code:
+Return code::
 
-- 0 OK
-- 1 Warning
-- 2 Critical
-- 3 Unknown
+    - 0 OK
+    - 1 Warning
+    - 2 Critical
+    - 3 Unknown
 
 ==============
 The User Guide
@@ -136,7 +133,6 @@ The User Guide
 .. toctree::
    :maxdepth: 2
 
-   snmp
    http
    ftp
    ssh
@@ -144,6 +140,7 @@ The User Guide
    mssql
    winrm
    wmi
+   snmp
 
 
 

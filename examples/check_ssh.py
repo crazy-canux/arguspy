@@ -13,8 +13,6 @@ Time: Thu 28 Jul 2016 04:44:53 PM CST
 Description:
     [1.0.0] 20160728 init for basic function.
 """
-import sys
-
 from arguspy.ssh_paramiko import Ssh
 
 
@@ -36,18 +34,22 @@ class Command(Ssh):
                                     required=True,
                                     help='The shell command.',
                                     dest='command')
-        self.cm_parser.add_argument('-w', '--warning',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Warning value for Command, default is %(default)s',
-                                    dest='warning')
-        self.cm_parser.add_argument('-c', '--critical',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Critical value for Command, default is %(default)s',
-                                    dest='critical')
+        self.cm_parser.add_argument(
+            '-w',
+            '--warning',
+            default=0,
+            type=int,
+            required=False,
+            help='Warning value for Command, default is %(default)s',
+            dest='warning')
+        self.cm_parser.add_argument(
+            '-c',
+            '--critical',
+            default=0,
+            type=int,
+            required=False,
+            help='Critical value for Command, default is %(default)s',
+            dest='critical')
 
     def command_handle(self):
         """Get the number of the shell command."""
@@ -58,11 +60,15 @@ class Command(Ssh):
         if not self.__results:
             self.unknown("{} return nothing.".format(self.args.command))
         if len(self.__results) != 1:
-            self.unknown("{} return more than one number.".format(self.args.command))
+            self.unknown(
+                "{} return more than one number.".format(
+                    self.args.command))
         self.__result = int(self.__results[0])
         self.logger.debug("result: {}".format(self.__result))
         if not isinstance(self.__result, (int, long)):
-            self.unknown("{} didn't return single number.".format(self.args.command))
+            self.unknown(
+                "{} didn't return single number.".format(
+                    self.args.command))
 
         status = self.ok
         # Compare the vlaue.
@@ -72,8 +78,10 @@ class Command(Ssh):
             status = self.critical
 
         # Output
-        self.shortoutput = "{0} return {1}.".format(self.args.command, self.__result)
-        [self.longoutput.append(line) for line in self.__results if self.__results]
+        self.shortoutput = "{0} return {1}.".format(
+            self.args.command, self.__result)
+        [self.longoutput.append(line)
+         for line in self.__results if self.__results]
         self.perfdata.append("{command}={result};{warn};{crit};0;".format(
             crit=self.args.critical,
             warn=self.args.warning,
@@ -96,8 +104,7 @@ class Register(Command):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    arguments = sys.argv[1:]
-    if 'command' in arguments:
+    if plugin.args.option == 'command':
         plugin.command_handle()
     else:
         plugin.unknown("Unknown actions.")

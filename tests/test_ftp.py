@@ -38,7 +38,7 @@ class TestFtp(unittest.TestCase):
 
     def test_connect(self):
         ftp = Ftp()
-        self.assertIsNotNone(ftp.connect(), msg='ftp connect failed.'
+        self.assertIsNotNone(ftp.connect(), msg='ftp connect failed.')
 
     def test_quit(self):
         pass

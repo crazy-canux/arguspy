@@ -16,8 +16,6 @@ Description:
     example:
         ./check_ftp.py -H [IP] -u [USER] -p [PASSWORD] --debug filenumber -p "\\"
 """
-import sys
-
 from arguspy.ftp_ftplib import Ftp
 
 
@@ -52,18 +50,22 @@ class FileNumber(Ftp):
                                     action='store_true',
                                     help='Recursive count file under path.',
                                     dest='recursive')
-        self.fn_parser.add_argument('-w', '--warning',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Warning value for filenumber, default is %(default)s',
-                                    dest='warning')
-        self.fn_parser.add_argument('-c', '--critical',
-                                    default=0,
-                                    type=int,
-                                    required=False,
-                                    help='Critical value for filenumber, default is %(default)s',
-                                    dest='critical')
+        self.fn_parser.add_argument(
+            '-w',
+            '--warning',
+            default=0,
+            type=int,
+            required=False,
+            help='Warning value for filenumber, default is %(default)s',
+            dest='warning')
+        self.fn_parser.add_argument(
+            '-c',
+            '--critical',
+            default=0,
+            type=int,
+            required=False,
+            help='Critical value for filenumber, default is %(default)s',
+            dest='critical')
 
     def filenumber_handle(self):
         """Get the number of files in the folder."""
@@ -95,7 +97,8 @@ class FileNumber(Ftp):
         # Output
         self.shortoutput = "Found {0} files in {1}.".format(self.__result,
                                                             self.args.path)
-        [self.longoutput.append(line) for line in self.__results if self.__results]
+        [self.longoutput.append(line)
+         for line in self.__results if self.__results]
         self.perfdata.append("{path}={result};{warn};{crit};0;".format(
             crit=self.args.critical,
             warn=self.args.warning,
@@ -117,9 +120,7 @@ class Register(FileNumber):
 def main():
     """Register your own mode and handle method here."""
     plugin = Register()
-    # arguments = sys.argv[1:]
-    # if 'filenumber' in arguments:
-    if plugin.args.cmdopt == 'filenumber':
+    if plugin.args.option == 'filenumber':
         plugin.filenumber_handle()
     else:
         plugin.unknown("Unknown actions.")
