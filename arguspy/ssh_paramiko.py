@@ -19,9 +19,10 @@ import string
 import paramiko
 
 from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Ssh(Monitor):
+class Ssh(BaseNagios):
 
     """Basic class for ssh."""
 

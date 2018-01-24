@@ -18,6 +18,10 @@ arguspy
 .. figure:: https://github.com/crazy-canux/arguspy/blob/master/data/images/argus.jpg
    :alt: pic1
 
+[Deprecated] As nagios is too old, this project is deprecated.
+
+Please Move to another project `[super-devops] <https://github.com/crazy-canux/super-devops>`_.
+
 Arguspy is pure python code.
 
 It's a API packge for monitoring plugins, like Nagios, Icinga, Naemon, Shinken, Centreon, Opsview and Sensu.
@@ -30,6 +34,7 @@ How to install
 
 Use pip to install::
 
+    $ pip install super_devops
     $ pip install arguspy
 
 ----------
@@ -116,14 +121,11 @@ TODO
 * Write unit tests in tests/
 * Write docs in docs/
 * Write examples in examples/
-* Compatible with Python3(2.0.0)
-* vSphere monitoring(1.6.0)
-* LDAP monitoring(1.5.0)
-* SNMP monitoring(1.4.0)
-* Fix all pylint errors(1.3.3)
-* Implement threshold(1.3.2)
-* Refactor argparse(1.3.1)
-* Threshold(1.3.0)
+
+* Compatible with Python3
+* vSphere monitoring
+* LDAP monitoring
+* SNMP monitoring
 
 ============
 Contribution

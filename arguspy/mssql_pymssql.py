@@ -16,9 +16,10 @@ Description:
 import pymssql
 
 from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Mssql(Monitor):
+class Mssql(BaseNagios):
 
     """Basic class for mssql."""
 

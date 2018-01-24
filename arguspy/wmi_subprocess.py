@@ -16,10 +16,10 @@ Description:
 import csv
 import subprocess
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Wmi(Monitor):
+class Wmi(BaseNagios):
 
     """Basic class for wmi."""
 

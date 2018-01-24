@@ -21,10 +21,10 @@ Description:
 """
 import winrm
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class WinRM(Monitor):
+class WinRM(BaseNagios):
 
     """Basic class for WinRM."""
 

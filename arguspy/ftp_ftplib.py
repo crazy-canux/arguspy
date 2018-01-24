@@ -15,10 +15,10 @@ Description:
 """
 import ftplib
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Ftp(Monitor):
+class Ftp(BaseNagios):
 
     """Basic class for ftp."""
 

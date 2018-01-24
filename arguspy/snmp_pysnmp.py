@@ -16,10 +16,10 @@ DESCRIPTION:
 """
 import pysnmp
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Snmp(Monitor):
+class Snmp(BaseNagios):
 
     "Wrapper pysnmp for monitoring plugins."
 

@@ -14,5 +14,5 @@ Example:
     from arguspy.ftp_ftplib import Ftp
 """
 
-__version__ = "1.3.1"
+__version__ = "2.0.0"
 __author__ = "Canux CHENG"

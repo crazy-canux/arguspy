@@ -15,10 +15,10 @@ DESCRIPTION:
 """
 import requests
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Http(Monitor):
+class Http(BaseNagios):
 
     """Basic class for http/https."""
 

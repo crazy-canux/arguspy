@@ -15,10 +15,10 @@ Description:
 """
 import pymysql
 
-from monitor import Monitor
+from super_devops.monitoring.nagios_wrapper import BaseNagios
 
 
-class Mysql(Monitor):
+class Mysql(BaseNagios):
 
     """Basic class for mysql."""
 
